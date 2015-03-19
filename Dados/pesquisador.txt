@@ -1,0 +1,405 @@
+NOME;CITACAO;NUMIDEN;TITULACAO
+Adriana Regina Corrent;CORRENT, A. R.;7001292301902192;Agronomia
+Aherton Batista Júnior;BATISTA JÚNIOR, A.;;Educação Física
+Alyson Trindade Fernandes;FERNANDES, A. T.;3697457567228148;Sistemas de Informação
+Ana Flávia Costa da Silveira Oliveira;"OLIVEIRA, Ana Flávia Costa da Silveia;OLIVEIRA, ANA";1898286191259494;Biomedicina
+André Silva de Oliveira;"OLIVEIRA, André Silva de;De oliveira, André";8338259645103980;Ciências Biológicas Licenciatura
+Antonio Clarette Santiago Tavares;TAVARES, A. C. S.;;Agronomia
+Carla Gomes Teodoro;TEODORO, C. G.;;Licenciatura Em Física
+Daniela Souza Santos de Sá;SÁ, D. S. S.;9394896275313315;Enfermagem
+Edinamar Candida dos Reis Piropo;PIROPO, E. C. R.;;Matematica
+Eyleen Nabyla Alvarenga;ALVARENGA, E. N.;7516709092023267;enfermagem
+Fabrício Longuinhos Silva;SILVA, F. L.;3902611293247142;Administração
+Fabíola D'Ávila Reis;"REIS, F. D.;REIS, F.D.";4981371897742163;Letras - Português e Inglês
+Irã Pinheiro Neiva;"NEIVA, Irã Pinheiro;NEIVA, I.P.";8193931091718626;Agronomia
+Jeferson Mateus Dariva;DARIVA, J. M.;6969153566671897;Agronomia
+Joan Brálio Mendes Pereira Lima;LIMA, J.B.M.P.;;Medicina Veterinária
+José Rui Castro de Sousa;SOUSA, J. R. C.;7459829695902045;Ciencia da Computacao
+Juliana de Almeida Pereira e Santos;PEREIRA, J. A.;;Licenciatura em Letras Português
+Luiz Fernando Rocha Botelho;BOTELHO, L. F. R.;2677850220342219;Zootecnia
+Marcus Leonardo Figueiredo Silva;SILVA, M. L. F.;6542176802226351;bacharelado em Medicina Veterinária
+Mario Anisio Borges;BORGES, M. A.;;administraçao de empresas
+Paula Rodrigues Diamantino;DIAMANTINO, P. R.;1305838207632248;Letras Espanhol
+Paulo Sergio de Souza e Silva;"SILVA, Paulo Sergio de Souza e;Priscylla Lobato Campos Lopes";1328646210425754;Historia
+Pedro Borges Pimenta Júnior;PIMENTA JÚNIOR, P. B.;;Letras/Português
+Rafaella da Silva Nogueira;NOGUEIRA, R. S.;;Agronomia
+Roberta Barroso;BARROSO, R.;1726457773983456;Graduação em Enfermagem
+Roberta Pereira Matos;MATOS, R. P.;7514063153007705;Licenciatura em Química
+Roberto Wagner Ferraz Lacerda Júnior;LACERDA JÚNIOR, R. W. F.;;Ciência da Computação
+Rodrigo Carneiro Brandão;"BRANDÃO, R. C.;CARNEIRO BRANDAO, RODRIGO;BRANDÃO, RODRIGO";3295933607618125;Sistemas de Informação
+Rômulo Lima Meira;MEIRA, R. L.;4791886767767805;Licenciatura em Geografia
+Samuel Chaves Dias;DIAS, S. C.;;Matemática
+Tania Maria Mares Figueirêdo;FIGUEIREDO, T. M. M.;;Estudos Sociais - Licenciado
+Tharley Eustáquio da Mota Silva;SILVA, T. E. M.;7720692050216089;Engenharia da Computação
+Uendel Gonçalves de Almeida;ALMEIDA, U. G.;1922312283549689;Enfermagem
+Vico Mendes Pereira Lima;"LIMA, Vico Mendes Pereira;Lima, Vico Mendes Pereira";3109678380509881;Engenharia Agrícola
+Wesley Lima de Oliveira;OLIVEIRA, W. L.;0322891711591753;Enfermagem
+Weslley Florentino de Oliveira;OLIVEIRA, W. F.;6876843984319457;Matemática
+Wilma Maria Pereira;PEREIRA, Wilma Maria;6886428387217172;Letras
+Yuri Bento Marques;MARQUES, Y. B.;;SISTEMAS DE INFORMAÇÃO
+Érica Souza Tupiná;TUPINÁ, É. S.;1456319784427791;Curso superior de Tecnolgoia em Gestão Comercial
+Adriano José de Paula;PAULA, A. J.;;Administração
+Aécio Oliveira de Miranda;"MIRANDA; Aécio Oliveira de";1015622845694542;Matemática Licenciatura Plena
+Ana Claudia Goncalves de Sá Jardim;SA, A. C. G.;7249986551617903;Administracao de Empresas
+Carlos Manuel Pereira da Costa Filho;COSTA FILHO, C. M. P.;0345945846702957;Analise e Desenvolvimento de Sistemas
+Clara Cynthia Melo e Lima;LIMA, Clara Cynthia Melo;1433273265571092;Enfermagem
+Cleisson da Silva Rios;RIOS, Cleisson Silva;1449563410021833;Ciências Contábeis
+Dayse Aparecida Silva Pereira Coutinho;PEREIRA, D. A. S.;4843792437525533;Enfermagem
+Edi de Freitas Cardoso Júnior;CARDOSO JÚNIOR, E. F.;3941119460421290;História/Licenciatura
+Edilson Luiz Candido;CANDIDO, E. L.;8199422066228829;CIÊNCIAS BIOLÓGICAS LICENCIATURA PLENA
+Eliane Macedo Sobrinho Santos;"SOBRINHO SANTOS, E.M.;Sobrinho, Eliane M.;Sobrinho, Eliane Macedo;MACEDO SOBRINHO, ELIANE;Santos Sobrinho, Eliane Macedo";0451966994155112;Medicina Veterinária
+Elizabeth Moreira Gomes;GOMES, Elizabeth Moreira;2300460725207329;Letras
+Emerson Delano Lopes;LOPES, E. D.;8348156115295572;Engenharia Florestal
+Emerson de Oliveira Muniz;MUNIZ, E. de O.;7187127555316275;Geografia Licenciatura
+Fernando Marcos Souza Silva;"SILVA, F. M. S.;SILVA, Fernando M. S.";7059909954060830;Sistemas de Informação
+Fernando Nunes dos Santos;SANTOS, F. N.;6606447301265682;história
+Francisca Souza Santos;SANTOS, F. S.;0895296389760257;Enfermagem
+Fábio Coutinho Andrade;ANDRADE, F. C.;2533384528728842;Fisioterapia
+Geraldo Lopes Junior;LOPES JUNIOR, G.;;Matemática Plena
+Gilmar de Souza Franco;FRANCO, G. S.;;Administração de Empresas
+Gilmara Maria Rodrigues Casagrande;CASAGRANDE, G. M. R.;7039927642219243;Letras / espanhol
+Gustavo Rezende Sá;SÁ, G. R.;2008076072315973;Sistemas de Informação
+Harley Alves Lima;LIMA, H. A.;;Bacharel e Licenciado em Educação Física
+Jeancarlo Campos Leão;LEÃO, J. C.;8559560167391009;Sistemas de Informação
+Joaquim Neto de Sousa Santos;"SANTOS, J. N. S.;SANTOS, JOAQUIM N.S.";2777826585719675;Ciências Biológicas
+Josué Batista Antunes;"ANTUNES, J. B.;BATISTA J. A.";4143116376815444;Sistemas de Informação
+Joao Antonio Motta Neto;MOTTA NETO, J.A.;3619768429254796;Agronomia
+Juliana de Almeida Pereira e Santos;PEREIRA, J. A.;;Licenciatura em Letras Português
+Juvenal Martins Gomes;GOMES, Juvenal Martins;1200372015110599;Engenharia Florestal
+Katiúscia de Sousa Pereira Silva;SILVA, K. S. P.;;Letras Inglês
+Leandro de Paula Liberato;LIBERATO, L. P.;8550479924022492;Letras
+Luciano de Oliveira Fuscaldi Neves;FUSCALDI, L. O.N.;8870854850648502;ADMINISTRAÇÃO DE EMPRESAS
+Luna Ceci Oliveira Cantuária;CANTUÁRIA, L. C. O.;3129007623900156;Licenciatura/Bacharelado
+Magno Barbosa Dias;DIAS, Magno Barbosa;6393808229937133;Plenificação em Física
+Marcelo Moreira West;WEST, M. M.;;Sistemas de Informação
+Maria Aparecida Lúcio Mendes;MENDES, M. A. L.;5001830224889501;Pedagogia
+Marilze do Carmo Lima e Almeida;ALMEIDA, M. C. L.;;
+Mario de Souza Santana;SANTANA, M. S.;;Matemática/Ciências
+Natalino Martins Gomes;GOMES, N. M.;6666019677000635;Engenharia Agrícola
+Patrícia Conceição Medeiros;MEDEIROS, P. C.;;ENGENHARIA AMBIENTAL
+Shirlene Aparecida da Rocha;ROCHA, S. A.;5605716752196635;LETRAS  PORT.INGLÊS E LITERATURA
+Sumerly Bento Camargo Junior;CAMARGO JUNIOR, S. B.;2210383082501344;Direito
+Alisson Macendo Amaral;AMARAL, A. M.;7711252270672397;Tecnologia em Irrigação e Drenagem
+Ana Lúcia Ferreira Oliveira de Freitas;FREITAS, A. L. F. O.;;Administração
+Antonio Martins de Freitas Júnior;FREITAS JÚNIOR, A. M. de;5040964173105364;Química
+Charles de Assis Oliveira Rocha;"Charles de Assis Oliveira Rocha;Charles de assis Oliveira Rocha";;Fìsica
+Cristiane Gonçalves Rodrigues Sarmento;RODRIGUES-SARMENTO, Cristiane Gonçalves;;Geografia
+Diego Viana Porto;PORTO, D. V.;7501516905806911;Tecnologia em Análise e Desenvolvimento de Sistema
+Dinamor Chicarelli do Nascimento;NASCIMENTO, D. C.;;Letras Inglês Português
+Diogo de Moraes Cardoso;CARDOSO, D. M.;6074465178091637;zootecnia
+Elton Carlos Grossi;GROSSI, E. C.;;Abi - Química
+Eude Soares de Lacerda;LACERDA, E. S.;;Bacharel em Sistema de Informação
+Francisco Valdevino Bezerra Neto;BEZERRA NETO, Francisco Valdevino;7980444760931345;Licenciatura em Ciências Agrícolas
+Gabriel Müller Valadão;VALADÃO, G. M.;7204651398996456;Engenharia Florestal
+Geraldo Lopes Junior;LOPES JUNIOR, G.;;Matemática Plena
+Gladstone Pereira Lima;LIMA, G. P.;0669760559659537;História
+Hilton Lopes Galvao;GALVAO, H. L.;8252340768046115;Engenharia de Alimentos
+Inácio Barbosa Borges;BORGES, I. B.;7848391727953290;Agronomia
+João Barbosa de Souza Filho;SOUZA FILHO, João Barbosa de;;Engenharia Elétrica - Enfase Computação
+Juliana Maria Nogueira Pereira;PEREIRA, J. M. N.;0535352341664146;Agronomia
+Luana da Silva Botelho;"BOTELHO, L. S.;BOTELHO, LUANA DA SILVA";4356757524622921;Agronomia
+Marcos Miguel Guimarães Campos;CAMPOS, M. M. G.;;educação física
+Marcos de Oliveira;OLIVEIRA, M.;;Ciencias Biologicas
+Málter Dias Ramos;RAMOS, M. D.;;Letras/Português
+Mário da Silva Araújo Filho;"Araújo Filho, M. S.;Arau'jo Filho, M. S.";;Física
+Narah Vivian Nunes Marques;MARQUES, N. V. N.;;Letras - Ingles
+Pedro Fábio Saraiva;SARAIVA, P. F.;1023187595687002;
+Pedro Paulo Pereira Brito;BRITO, Pedro Paulo Pereira;;Pedagogia
+Raphael Magalhães Hoed;HOED, R. M.;9946811437600819;Tecnologia em Análise e Desenvolvimento de Sistema
+Reginaldo Proque;PROQUE, R.;;Agronomia
+Renata Maciel dos Reis;"REIS, R. M.;REIS, RENATA M";7023323201468555;Matemática
+Rildo Araújo Leite;LEITE, Rildo Araújo;8101026334961934;Agronomia
+Roberto Lúcio Corrêa de Freitas;FREITAS, R. L. C.;3970556947782406;Ciências Econômicas
+Romualdo Ferreira dos Santos;SANTOS, R. F.;6694686711952996;EDUCAÇÃO FÍSICA
+Ronan Aparecido Valadares Santana;"SANTANA, R. A. V.;SANTANA, R.A.V.;SANTANA, Ronan Aparecido Valadares";7376278402984641;Zootecnia
+Rosemere Freire Fonseca;FONSECA, R. F.;;HISTÓRIA
+Sebastião Lourenço Henrique;HENRIQUE, S. L.;;ENGENHARIA AGRONÔMICA
+Thiago Lamonier Souza Gomes;GOMES, T. L. S.;3348183528281255;letras espanhol
+Willian Antonio Gonçalves;GONÇALVES, W. A.;7276337684253706;Tecnologia em Sistemas de Informação
+Wilson Montalvão Lopes;LOPES, W. M.;;Ciências Biológicas
+Adenise Vieira de Souza;SOUZA, A. V.;5740301921709130;Licenciatura em Matemática
+Adriana Martins da Silva Castro;SILVA, A. M.;;Licenciatura em Matemática
+Adriana Regina Corrent;CORRENT, A. R.;7001292301902192;Agronomia
+Adriano Antunes Prates;PRATES, A. A.;6880454931131515;Sistemas de Informação
+Alberto Luiz Ferreira Berto;BERTO, A. L. F.;;Engenharia agronômica
+Alessandro Maciel de Souza;SOUZA, A. M.;;Licenciatura em Ciências Agrícolas
+Alexandre Petusk Filipe;FILIPE, A. P.;7846523134081057;Engenharia Florestal
+Alisson Macendo Amaral;AMARAL, A. M.;7711252270672397;Tecnologia em Irrigação e Drenagem
+Ana Alves Neta Barbosa;ALVES NETA, A.;;Letras
+André Aristóteles da Rocha Muniz;ARISTÓTELES-MUNIZ, A.;0350610281802211;Administração
+Ane Marielle Monteiro Matos;MATOS, A. M. M.;;ciências biologicas
+Antonio Pinheiro Caires;CAIRES, A. P.;8720111764051023;administração
+Antônio Augusto de Almeida Corte;CORTE, A. A. A.;;Filosofia
+Ariane Gonçalves de Oliveira;OLIVEIRA, A. G.;1619195853409397;Enfermagem
+Aroldo Gomes Filho;"GOMES FILHO, A.;Gomes Filho, Aroldo";7617123317757191;Agronomia
+Celimar Reijane Alves Damasceno Paiva;PAIVA, C. R. A. D.;0567547569121826;Matematica
+Claudio Alexandre Gusmão;GUSMÃO, C. A.;5499838173365375;Sistemas de Informação
+Cleiane Gonçalves Oliveira;OLIVEIRA, C. G.;4454602937031659;Sistemas de Informação
+Cláudio Roberto Ferreira Mont'Alvão;MONT'ALVÃO, Cláudio Roberto Ferreira;2443029372751001;Medicina Veterinária
+Cláudio Wilson dos Santos Pereira;PEREIRA, C. W. S.;6886618478421094;Pedagogia
+César Vinícius Mendes Nery;NERY, C. V. M.;5241196936543060;Engenharia Agronômica
+Danilo Magalhães Nunes;NUNES, D. M.;;Tecnologia em Informática
+Danilo Pereira Ribeiro;RIBEIRO, D. P.;0094135106993891;Agronomia
+Dilermando Dourado Pacheco;PACHECO, D. D.;3430404269349319;Agronomia
+Edinei Canuto Paiva;PAIVA, E. C.;9554164733095302;Física
+Ednaldo Liberato de Oliveira;"OLIVEIRA, E. L. de;OLIVEIRA, EDNALDO L. DE";;Agronomia
+Edson Oliveira Neves;NEVES, E. O.;4453961380065286;Administração de Empresas e Administração Pública
+Eduardo Cabral da Cruz;CRUZ, E. C.;;Ciências Contábeis
+Eduardo Souza do Nascimento;NASCIMENTO, E. S.;8944988895042552;zootecnia
+Eduardo Wagner Silva Pena;PENA, E. W. S.;0700137540862553;CIÊNCIAS BIOLÓGICAS
+Egidio Rodrigues Martins;MARTINS, E. R.;8480064285039030;Licenciatura Plena em Matemática
+Elias Rodrigues Oliveira Filho;OLIVEIRA FILHO, E. R.;;
+Emanoelito Fernandes Vieira Júnior;VIEIRA JÚNIOR, E. F.;;Letras Português/Inglês
+Everton Lopes Guimarães;GUIMARÃES, E. L.;1091134263739281;Ciências- Licenciatura Plena em Matemática
+Fabíola Lima Escobar;ESCOBAR, F. L.;9022174756370351;Bacharel em Enfermagem
+Felipe Cézar de Castro Antunes;ANTUNES, F. C. C.;3156030078276280;Sistemas de Informção
+Felipe Lisboa Guedes;GUEDES, F. L.;;Ciencias Economicas
+Fábio Antunes Vieira;VIEIRA, Fábio Antunes;;História
+Fábio Martins de Carvalho;CARVALHO, F. M. de;5634166118410202;Agronomia
+Fábio Rodrigues Barbosa;BARBOSA, F. R.;;Ciência da Computação
+Geralda Magela Costa Nobre;NOBRE, G. M. C. R.;;Engenharia de Alimentos
+Gilda Maria Rodrigues Fonseca;FONSECA, Gilda Maria Rodrigues;0341052377851109;LETRAS-PORTUGUES/INGLES
+Giuliano Viana de Alkmim;ALKMIM, G. V.;;Ciência da Computação
+Gustavo Linhares Lélis Frota;FROTA, G. L. L.;1707513800345644;Sistemas de Informação
+Haline Falcão de Ornelas;ORNELAS, H. F.;0127169231723686;ENFERMAGEM
+Henrique Faria de Oliveira;OLIVEIRA, H. F.;7395203182969057;Desenvolvimento de Sistemas
+Heron Walmor Santos Cruz;CRUZ, H. W. S.;8297323977035395;ciencias biologicas
+Hélder Seixas Lima;LIMA, H. S.;;Sistemas de Informação
+Idemar Magalhães dos Passos;PASSOS, I. M.;2965788955004725;Ciencias Fisicas e Biológicas
+Inácio Barbosa Borges;BORGES, I. B.;7848391727953290;Agronomia
+Ivan Carlos Carreiro Almeida;"ALMEIDA, I.C.C.;ALMEIDA, IVAN C.;ALMEIDA, IVAN C.C.";9045591206203235;Agronomia
+Ivonilde Pereira Mota;MOTA, I. P.;;Letras Português/ Inglês
+Ivy Daniela Monteiro Matos;MATOS, Ivy Daniela Monteiro;1519943823530098;Letras
+Iza Manuella Aires Cotrim Guimarães;COTRIM - GUIMARÃES, I. M. A. ou COTRIM, I.M.A.;8733940969978699;Pedagogia - Magistério das Séries Iniciais
+Jefferson Suela;"SUELA, J.;Suela, J.;Suela, J";2086547470164107;Física
+Joan Brálio Mendes Pereira Lima;LIMA, J.B.M.P.;;Medicina Veterinária
+Joaquim Comini Frota;FROTA, Joaquim Comini.;3613973069348958;Bacharelado em Direito
+Joaquim Pinto Gomes;GOMES, J. P.;;Fisica
+Joelma de Fátima Mendes Bandeira;MENDES, Joelma de Fátima;4583531853631104;Pedagogia
+Jomar de Oliveira Vasconcelos;VASCONCELOS, J. O.;7502788567691757;Licenciatura em Química
+Joselice Ferreira Lima;LIMA, Joselice F.;;Tecnologo em Processamento de Dados
+Josué Antunes de Macêdo;"MACÊDO, Josué Antunes de;MACÊDO, J. A.";7632858444903409;Matemática
+Josye Gonçalves Ferreira;FERREIRA, J. G.;;Letras/Espanhol
+José Alberto Alves de Souza;SOUZA, José Alberto Alves de;;Engenharia Agrícola
+José Ricardo Martins da Silva;"SILVA, J. R. M. ou SILVA, J.R.;SILVA, J.R.M.";8522325160475011;Medicina Veterinária
+João Carneiro Filho;CARNEIRO FILHO, J.;4778155081775292;Agronomia
+Juliana Maria Nogueira Pereira;PEREIRA, J. M. N.;0535352341664146;Agronomia
+Julio Cesar Pereira Braga;BRAGA, J. C. P.;9528398631059073;LICENCIATURA PLENA EM MATEMATICA
+Junio Angelo dos Santos;SANTOS, J. A.;;Geografia
+Jussara Barros Silva;SILVA, J. B.;;Zootecnia
+Karine Alencar Fróes;FRÓES, K. A.;4843190137003298;Enfermagem
+Kleber Carvalho dos Santos;SANTOS, K. C.;;Administração de Empresas
+Leandro de Aquino Mendes;MENDES, L. A.;9387458232195749;História
+Leila de Souza Almeida;ALMEIDA, L. S.;8623698884989972;história
+Lenir de Abreu;ABREU, L.;8210228334124808;Medicina Veterinária
+Liliam Alkmim Matos;MATOS, L. A.;0046566594022368;enfermagem
+Luara Cristiane Dourado Neves;NEVES, L. C. D.;0945581287171170;ENFERMAGEM
+Lucienne Veloso Brito;MELO, L. V.;7936190669401494;pedagogia
+Luiz Carlos Ferreira;FERREIRA, L. C.;9144780236879811;Ciências
+Lílian Isabel Ferreira Amorim;AMORIM, L. I. F.;6666513399755632;Licenciatura em matemática
+Marcelo Moreira Freire;"FREIRE, M. M.;Freire, Marcelo Moreira";1325803996780979;Química
+Marcelo de Farias Teixeira;TEIXEIRA, Marcelo de Farias;;Educação Física
+Marcos Aurélio Duarte Carvalho;"M. A. D. Carvalho;Carvalho M;Carvalho, M.;Marcos Carvalho;CARVALHO, MARCOS";8957553932269687;Física
+Maria Rosilene Alves Damasceno;DAMASCENO, M. R. A.;;Biologia
+Marli Silva Fróes;FRÓES, Marli Silva.;6891369331016361;Letras Português Inglês E Suas Respectivas Literat
+Máira Peres Alves Santim;"Santim, M. P. A.;Santim, Máira P. A.;Alves, M. P";7968825114349302;licenciatura em matemática
+Mírian Rejane Magalhães Mendes;MENDES, M. R. M.;5441930207316414;Farmácia e bioquímica
+Natalino Martins Gomes;GOMES, N. M.;6666019677000635;Engenharia Agrícola
+Neila Marcelle Gualberto Leite;Gualberto-Leite, N. M.;0504095283450728;Matemática - Licenciatura
+Nelson Licínio Campos de Oliveira;OLIVEIRA, Nelson Licínio Campos de;;Licenciatura Em Ciências Agrícolas
+Patrícia de Sousa Fernandes;"FERNANDES, P. S.;FERNANDES, PATRÍCIA DE SOUSA";0937973683734027;Enfermagem
+Paulo Cesar Pinheiro de Azevedo;AZEVEDO, P. C. P.;;AGRONOMIA
+Paulo Henrique Pimentel Veloso;VELOSO, P. H. P.;;Admnistração de Empresas
+Paulo Vitor do Carmo Batista;BATISTA, P. V. C.;;Sistemas de Informação
+Petrônio Cândido de Lima e Silva;SILVA, P. C. L.;2433080030239869;Sistemas de Informação
+Priscila Freitas de Souza;Souza, P. F.;3623194108417702;Licenciatura Plena em Letras Português/Inglês
+Rafael Lédo Rocha de Oliveira;OLIVEIRA, R. L. R.;;Licenciatura em Matemática
+Ramony Maria da Silva Reis Oliveira;OLIVEIRA, R. M. S. R.;0407745652275824;LETRAS (PORTUGUÊS/INGLÊS)
+Raniery Guilherme José Vicente;VICENTE, R. G. J.;5191268947615022;MATEMÁTICA
+Raphael Magalhães Hoed;HOED, R. M.;9946811437600819;Tecnologia em Análise e Desenvolvimento de Sistema
+Renato de Oliveira Silva;SILVA, R. O.;3494207948982566;educação fisica
+Renildo Ismael Félix Costa;COSTA, R. I. F.;4162917826906454;
+Roberto Comini Frota;FROTA, R. C.;;Administração
+Ronaldo Maurício Sampaio;SAMPAIO, R. M.;0984086083307345;MATEMÁTICA
+Sebastiao Batista Amorim;AMORIM, S. B,;2772031093045160;LICENCIATURA EM FISICA
+Sebastião Lourenço Henrique;HENRIQUE, S. L.;;ENGENHARIA AGRONÔMICA
+Sonia Sousa Almeida Rodrigues;RODRIGUES, S. S. A.;;Administração
+Soraia Ataide Linhares Frota;FROTA, S. A. L.;;
+Suzana Alves Escobar;ESCOBAR, S. A.;8235207650714886;Pedagogia
+Sérgio Leandro Sousa Neves;NEVES, S. L. S..;;Geografia
+Tatiana Tozzi Martins Souza Rodrigues;RODRIGUES, T.T.M.S.;9947790939215570;Agronomia
+Tatiane Reis do Amaral;AMARAL, T. R.;3896618974963377;Matemática
+Terezita Pereira Braga Barroso;BARROSO, T. P. B.;9814310129312563;
+Thatiane Lopes Oliveira;"OLIVEIRA, T. L.;OLIVEIRA, THATIANE LOPES";9297267648816937;Enfermagem
+Thiago Silva Miranda;MIRANDA, T. S.;5070475796309868;Sistemas de Informação
+Valkennedy de Moura Castro;CASTRO, V. M.;1059560323096584;Ciência da Computação
+Vitor Hugo Henriques de Almeida;ALMEIDA, V. H. H.;0134284097454212;
+Wagner Azis Garcia de Araújo;ARAÚJO, W. A. G.;3358334692825968;zootecnia
+Waldomiro Rodrigues Borba Junior;BORBA JUNIOR, W. R.;1609108636678166;Matemática
+Walfredo Sérgio Carneiro Figueiredo;FIGUEIREDO, W. S. C.;2907468690208904;Licenciatura Plena em Ciências Agrícolas
+Wanderson Pereira Araújo;ARAÚJO, W. P.;5201249459800140;Pedagogia
+Welington dos Santos Silva;SILVA, W. S.;;Tecnologia Análise e Desenvolvimento de Sistemas
+Wendel Fajardo dos Reis;REIS, W. F.;9875784857914398;ENGENHARIA CIVIL
+Wilney Fernando Silva;SILVA, Wilney F.;8105256021153519;Educação Física (Licenciatura)
+Zildete Lopes de Souza;SOUZA, Z. L.;8551824004708961;Letras/Português
+Antonio Augusto Martins dos Santos;SANTOS, A. A. M.;4554431240089960;Engenharia Elétrica
+Antônio Marcos Mendes Cardoso;CARDOSO, A. M. M.;;licenciatura em matemátaica
+Augusto José Querino;QUERINO, Augusto José;;História
+Bárbara Caroline de Oliveira;OLIVEIRA, Bárbara Caroline;;Letras Espanhol
+Cabriella Novello;NOVELLO, C.;3412742190564512;Educação Artística e Desenho
+Carla Evangelista Soares;SOARES, C. E.;;Enfermagem
+Claudia Aparecida Fernandes Pereira;FERNANDES, C. A.;4473756391192472;Biologia
+Cristina Jardim Rodrigues;RODRIGUES, Cristina Jardim;;Quimica Licenciatura
+Danivalton Fernandes de Oliveira;OLIVEIRA, D. F.;9496379185208874;Licienciatura Plena em Matemática
+Douglas Ângelo Teixeira;TEIXEIRA, Douglas Angelo;9999912723436265;Engenharia Industrial Elétrica
+Fernando Mota Ribeiro;RIBEIRO, F. M.;;ENGENHARIA QUÍMICA
+Flávio Santos Medeiros da Fonseca;FONSECA, F. S. M.;;SISTEMAS DE INFORMAÇÃO
+Fredy Coelho Rodrigues;RODRIGUES, F. C.;8278678762319811;Licenciatura em Matemática
+Geraldo Viégas VARGAS;"VARGAS;Geraldo Viégas";5499176746720023;Engenharia Civil
+Gilda Maria Rodrigues Fonseca;FONSECA, Gilda Maria Rodrigues;0341052377851109;LETRAS-PORTUGUES/INGLES
+Josiane de Oliveira Fagundes da Silva;SILVA, J. O. F.;;Bacharel em Sistemas de Informação
+João Carlos Gonçalves;GONÇALVES, J. C.;;Engenharia Química
+Juliana Mendes Campos Quintino;QUINTINO, Juliana Mendes Campos;3833760146846955;Letras Português Inglês
+Júlio César Guedes Antunes;ANTUNES, J. C. G.;0227639295929267;Sistemas de Informação
+Júlio César Vieira;VIEIRA, J. C.;3698754668898119;Letras Português
+Kelry Áurea Costa Fonseca;FONSECA, K. Á. C.;6216092701655994;Tecnologia em Segurança no Trabalho
+Laércio Ives Santos;SANTOS, L. I.;5234224884543563;Bacharel em Sistemas de Informação
+Luciana Balieiro Cosme;"COSME, Luciana Balieiro;COSME, LUCIANA B.";2613438851637939;Sistemas de Informação
+Luis Antônio Guisso Lopes;"LOPES, Luis A. Guisso;LOPES, L. A. Guisso;LOPES, L. A. G.";6181855641333903;Sistemas de Informação
+Marcelo Ribeiro da Silva;SILVA, M. R.;5192647639392196;Sistemas de Informação
+Marcos Aurélio Duarte Carvalho;"M. A. D. Carvalho;Carvalho M;Carvalho, M.;Marcos Carvalho;CARVALHO, MARCOS";8957553932269687;Física
+Maria de Fátima Ferreira Almeida;ALMEIDA, M. F. F.;1104831018413450;Licenciatura Plena em Matemática
+Mário Sérgio Costa da Silveira;SILVEIRA, M. S. C.;6917038821422988;Licenciatura Plena em Geografia
+Mírian Rejane Magalhães Mendes;MENDES, M. R. M.;5441930207316414;Farmácia e bioquímica
+Nelson Licínio Campos de Oliveira;OLIVEIRA, Nelson Licínio Campos de;;Licenciatura Em Ciências Agrícolas
+Nivea Alves de Almeida;ALMEIDA, N. A.;7130735988998672;Administração
+Renan Lucas de Oliveira Sá;SÁ, R. L. O.;9940889956462931;letras/ingles
+Renato Afonso Cota Silva;SILVA, R. A. C.;5284957118795876;Ciência da Computação
+Roberto Wagner Guimarães Brito;BRITO, R. W. G.;;Matematica
+Rodrigo Fernandes Gomes;GOMES, R. F.;3969851011193244;Bacharelado em Enfermagem
+Rosiney Rocha Almeida;ALMEIDA, R. A.;;Ciências Biológicas
+Sebastiao Rodrigues de Aguiar Filho;AGUIAR FILHO, S. R.;;Engenharia Elétrica
+Sylmara Corrêa Monteiro;MONTEIRO, S. C.;;Enfermagem e Obstetrícia
+Sergio Gregory Magalh?es de Brito;BRITO, S. G. M.;;Fisica
+Uraci Maria da Silva;SILVA, U. M.;1283195880198515;Educação Física
+Valesca Rodrigues de Souza;SOUZA, V. R. de;2655468005627949;Letras Espanhol
+Wesley Maia de Souza;SOUZA, W. M.;3064858740187081;Química
+Alex Lara Martins;MARTINS, A. L.;;Filosofia
+Alexandre Botelho Brito;BRITO, A. B.;1777010295473757;Matemática
+Alisson Costa Martins;MARTINS, A. C.;;Licenciatura Plena em Ciências Biológicas
+André Luiz Lacerda Souza;SOUZA, A. L. L.;1654517497820339;Educação Física
+Antônio Dias dos Santos Neto;SANTOS NETO, A. D.;1931445782378745;Direito
+Arielle de Matos Souza;SOUZA, A. M.;3048729835926248;Enfermagem
+Bruno Lopes de Faria;FARIA, B. L.;;Ciência da Computacão
+Daniel Cosme Mendonça Maia;MAIA, D. C. M.;4029581055591109;Sistemas de Informação
+Daniel Guimarães Silva;SILVA, Daniel Guimarães;7694484574008051;Matemática
+Dayse Lúcide Silva Santos;SANTOS, D. L.S;2165446647770584;Campus Diamantina História
+Douglas Santana Fagundes;FAGUNDES, D. S.;9767759091420556;Curso de Graduacao em Enfermagem
+Felipe Augusto Oliveira Mota;MOTA, F. A. O.;7475998470890469;Análise e Desenvolvimento de Sistemas
+Hélio de Morais Filho;MORAIS FILHO, H.;3481819894107427;Engenharia Civil
+Jamil Domingos da Silva;SILVA, J. D.;;Letras Português/Inglês
+Joaquina Aparecida Nobre da Silva;Nobre, Joaquina Aparecida  Silva;0412565180687621;Letras
+Juliana Silva Ramires;"RAMIRES, J.R.;RAMIRES, J.S;LACERDA, JULIANA RAMIRES";6389942055655964;CIENCIAS CONTABEIS
+Juliara Lopes da Fonseca;FONSECA, J. L.;;Administração
+Julio Cesar Pereira Braga;BRAGA, J. C. P.;9528398631059073;LICENCIATURA PLENA EM MATEMATICA
+Junai Carvalho de Souza;SOUZA, J. C.;9911721559904846;Licenciatura em Química
+Junio Jaber;JÁBER, J.;;Licenciatura Plena em História
+Kewla Dias Pires Brito;BRITO, K. D. P.;6276471408758184;Matemática
+Luciano Soares Diniz;DINIZ, L. S.;;Curso de Graduação em Enfermagem
+Luciano Soares de Souza;"SOUZA, L. S.;DE SOUZA, LUCIANO S.";9111174983948876;Sistemas de Informação
+Marcelo de Miranda Lacerda;LACERDA, M. M.;;CIÊNCIAS CONTÁBEIS
+Maria Neuza Almeida Queiroz;QUEIROZ, M. N. A.;4478554678255811;LICENCIATURA EM FÍSICA
+Maria do Socorro Vieira Barreto;BARRETO, M. S. V.;7228367493163951;Pedagogia
+Nesmária Sany Costa Alves;ALVES, N. S. C.;2356079732971414;Administração
+Renata Maurício Sampaio;SAMPAIO, R. M.;;Letras - Português
+Ricardo Tadeu Barbosa;BARBOSA, R. T.;;História
+Silky Polyane Pereira da Silva Gonçalves;GONÇALVES, S. P. P. S.;0260386219605367;Geografia
+Talita Aparecida da Guarda;GUARDA, T. A.;;Letras/Português
+Tharley Eustáquio da Mota Silva;SILVA, T. E. M.;7720692050216089;Engenharia da Computação
+Vívia Paula Diniz Abreu;ABREU, Vívia P. D.;;Engenharia Civil
+Walter Andrade de Freitas;FREITAS, W. A.;0938042760282771;Física Bacharel/Licenciatura
+Weslley Florentino de Oliveira;OLIVEIRA, W. F.;6876843984319457;Matemática
+Willy de Oliveira;OLIVEIRA, W.;;Administração
+Yara Patrícia Barral de Queiroz Guimarais;GUIMARAIS, Y.P.B.Q.;5736629774676308;Matemática
+Érica de Freitas Guimaraes Ramos;RAMOS, É. F. G.;9163748518481133;Administração
+Adalcino França Júnior;FRANÇA JÚNIOR, A.;8595103680441060;Liceciatura em Ciências - Habilitação em Química
+Aldemi Ferreira Mendes;MENDES, A. F.;;Matemática - Licenciatura Plena
+Alexandre Botelho Brito;BRITO, A. B.;1777010295473757;Matemática
+Aline Nogueira Alves;ALVES, A. N.;;Química
+Alison Zille Lopes;"LOPES, A. Z.;LOPES, Alison Zille";;Ciência da Computação
+Andre Candido Lopes;LOPES, A. C.;6344322921866934;ENGENHARIA AGRONOMICA
+Andréia Alves de Paula;PAULA, A. A.;7621893536152376;Engenharia de Alimentos
+Antonio Carlos Pinheiro Cani;"CANI, ANTONIO CARLOS PINHEIRO;CANI, A. C. P.;CANI, Antonio Carlos Pinheiro;Cani, Antonio Carlos Pinheiro;Cani, A. C. P.";;Engenharia Agrícola
+Antonio Roque Sarmento de Oliveira;OLIVEIRA, A. R. S.;7357481580379351;Medicina Veterinária
+Arilson Rodrigues de Sousa;SOUSA, A. R.;;LICENCIATURA PLENA EM MATEMÁTICA
+Arthur Faria Porto;PORTO, Arthur Faria;6320284072508777;Sistemas de Informação
+Ataliba Durães Júnior;DURÃES JÚNIOR, A.;9524602161393847;Ciências Biológicas
+Charles Bernardo Buteri;"BUTERI, Charles Bernardo;BUTERI, CB";;Medicina Veterinária
+Cristiane da Silva Melo;MELO, C. S.;;Farmácia com habilitação em indústria
+Daniel Martins Nunes;NUNES, D. M.;;Matemática/ Licenciatura
+Daniela Caetano Cardoso;CARDOSO, D. C.;5386255555582347;BACHAREL EM ECONOMIA DOMÉSTICA
+Danilo Teixeira Silva;SILVA, D. T.;;Ciência da Computação
+Edilene Alves Barbosa;BARBOSA, E. A.;;Ciências Agrícolas
+Edilson Jardim Viana;VIANA, E. J.;9182954731779871;Engenharia de Alimentos
+Ednéia Rodrigues Ribeiro;RIBEIRO, E. R.;3532743923165337;Letras/Portugues
+Edson Antunes Quaresma Júnior;QUARESMA JÚNIOR, E. A.;1176141467543002;Administração
+Eduardo Roman Albuquerque;ALBUQUERQUE, E. R.;6628601391972703;Ciência da Computação
+Eilson Santiago;SANTIAGO, E.;;Engenharia Elétrica
+Elizio Mario Ferreira;FERREIRA, E. M.;;ciencias
+Fabiano Rosa de Magalhães;MAGALHÃES, F. R.;6633589151120330;Ciências Sociais
+Fabiene Brito Mendes Teles;TELES, F. B. M.;7678351100139256;Licenciatura em Educação Física
+Fabrício Silveira Santos;SANTOS, F. S.;1428471147752548;Agronomia
+Farley Jean de Sousa;"SOUSA, F. J.;SOUSA, FALEY JEAN DE";;Licenciatura em Química
+Felipe Cimino Duarte;DUARTE, F. C.;7080389479823729;Engenharia de Alimentos
+Fernando Barreto Rodrigues;RODRIGUES, F. B.;;Ciências Biológicas
+Fernando Matos Pereira;"PEREIRA, F. M.;PEREIRA, FERNANDO MATOS";;Bacharelado em Zootecnia
+Filipe Vieira Santos de Abreu;ABREU, F. V. S.;6648198692834006;Ciencias Biológicas Noturno
+Flavia Reis Ganem;GANEM, F. R.;5740269410064569;Química Bacharelado
+Fábio Mendes Ramos;RAMOS, Fábio Mendes;3711526884808704;Matemática
+Gabriel Domingos Carvalho;"CARVALHO, Gabriel Domingos;CARVALHO, G. D.;CARVALHO, G.D.";3227868849279669;Medicina Veterinária
+Geraldo Alves de Carvalho Júnior;CARVALHO JÚNIOR, G. A.;;EDUCAÇÃO FÍSICA
+Geraldo Magela Cardoso;CARDOSO, G. M.;;Física
+Giuliana de Sá Ferreira Barros;BARROS, G. S. F.;6239296315251066;Pedagogia
+Helane Patrícia Ramires Mendes;MENDES, H. P. R;;
+Hellen Vivian Moreira dos Anjos;ANJOS, H. V. M.;;PEDAGOGIA
+Jamerson Jardel Macedo Nere;NERE, J. J. M.;;Ciencia da Computação
+José Antônio Duarte Santos;SANTOS, J. A. D.;8472209800627526;Física
+Leonardo Humberto Guimarães Silva;SILVA, Leonardo Humberto Guimarães;;Ciência da Computação
+Leonardo Lara e Lanna;"LANNA, L. L.;Lanna, L.L.";6565670863098571;Medicina Veterinária
+Luciano Adley Costa Castro;"Adley;L.;Castro, L. A. C.";;Licenciatura e Bacharelado em Fisica
+Luiz Gomes Junior;GOMES JUNIOR, L.;;Engenharia química
+Lázaro Gonçalves Siqueira;SIQUEIRA, L. G.;7023911552919590;Licenciatura Plena Em Ciencias Agricolas
+Magalhaes Teixeira de Souza;SOUZA, M. T.;9531832920676113;Agronomia
+Mara Denise Dias Rodrigues;RODRIGUES, M. D. D.;;Pedagogia
+Marcelo Rossi Vicente;VICENTE, M. R.;6368035065093585;Agronomia
+Marco Aurélio Meira Fonseca;FONSECA, M. A. M.;;Licenciatura Plena em Matemática
+Maria Araci Magalhães;MAGALHÃES, M. A.;;Geografia
+Maria Clara Oliveira Durães;"DURÃES, M. C. O.;DURÃES, MARIA CLARA OLIVEIRA";3421873833022057;Ciências Biológicas
+Maria Neuza Almeida Queiroz;QUEIROZ, M. N. A.;4478554678255811;LICENCIATURA EM FÍSICA
+Maria Nilsa Martins de Araujo;ARAUJO, M. N. M.;;Matematica
+Maria da Penha de Laia;LAIA, M. P.;;LICENCIATURA PLENA EM CIÊNCIAS HABILITADA EM FÍSIC
+Marilze do Carmo Lima e Almeida;ALMEIDA, M. C. L.;;
+Marília Dutra Massad;"MASSAD, M. D.;MASSAD, MARÍLIA DUTRA;MASSAD, M.D.";0212747570691681;Agronomia
+Michellia Pereira Soares;SOARES, Michellia Pereira;9191276809063261;Ciências Biológicas
+Murilo Nonato Bastos;BASTOS, M. N.;;Educação Física
+Oscar William Barbosa Fernandes;FERNANDES, Oscar William Barbosa;1085651142174739;Ciências Agrárias
+Patricia Emannuelle dos Santos Brito;BRITO, P. E. S.;;Letras/Espanhol
+Patricia de Oliveira e Lucas;LUCAS, P. O.;;Sistemas de Informação
+Ricardo Magalhães Dias Cardozo;CARDOZO, R. M. D.;;Educação fisica
+Roberta Magalhães Dias Cardozo;CARDOZO, R. M. D.;5514119384637597;Engenharia de Alimentos
+Roberto Marques Silva;SILVA, Roberto Marques;;Licenciatura em Ciências Físicas e Biológicas
+Rogério Mendes Murta;MURTA, R. M.;6942640168918817;Zootecnia
+Romana Tatiane Soares Santos;SANTOS, R. T. S.;3376829001807101;Letras Português Inglês
+Ronaldo Medeiros dos Santos;SANTOS, R. M.;1578919263205943;Engenharia de Agrimensura
+Rosimeire Alves Guimarães;"GUIMARÃES, R. A.;GUIMARÃES, ROSIMEIRE ALVES";4771686142791083;Ciências habilitação Biologia
+Santina Aparecida Ferreira Mendes;"FERREIRA MENDES, S.A.;santina Aparecida Ferreira Mendes";2868724414485160;HISTÓRIA
+Thiago Moreira dos Santos;SANTOS, T. M.;1713236169589894;Medicina Veterinária
+Tiago Reis Dutra;"DUTRA, T. R.;DUTRA, T.R.";4258297392118397;Engenharia Florestal
+Vailton Afonso da Silva;SILVA, V. A.;6800421511492131;Licenciatura em Física
+Vanessa Paulino da Cruz Vieira;"VIEIRA, V. P. C.;VIEIRA, Vanessa Paulino da Cruz;Vieira, V. P. da C.;Cruz-Vieira, V.P.;Vieira, Vanessa P. C.";;Medicina Veterinária
+Vilson Alves Moreira;"MOREIRA;V. A.";;Filosofia
+Vinícius Orlandi Barbosa Lima;LIMA, V. O. B.;8345449527847242;Engenharia Florestal
+Wagner Patricio de Sousa Júnior;SOUSA JÚNIOR, W. P.;4529266513000458;Engenharia Florestal
+Wesley Antunes Meireles;"MEIRELES;W. A.;Meireles, Wesley Antunes;MEIRELES, Wesley Antunes;MEIRELES, W. A.";;Medicina Veterinária
+Wânia Silvinha Loiola de Oliveira;OLIVEIRA, W. S. L.;0787310370094953;Licenciatura em Geografia
+Élcio José do Nascimento;NASCIMENTO, É. J.;;Engenharia Agronômica
