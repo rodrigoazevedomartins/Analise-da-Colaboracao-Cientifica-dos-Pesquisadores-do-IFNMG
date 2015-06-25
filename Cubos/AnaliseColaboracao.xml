@@ -1,0 +1,94 @@
+<Schema name="AnaliseColaboracao">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Pesquisador">
+    <Hierarchy name="Pesquisador" visible="true" hasAll="true" primaryKey="pkPesquisador">
+      <Table name="dim_pesquisador">
+      </Table>
+      <Level name="Titula&#231;&#227;o" visible="true" column="TITULACAO" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Titula&#231;&#227;o do Pesquisador">
+      </Level>
+      <Level name="Nome Pesquisador" visible="true" column="NOME_PESQUISADOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome do Pesquisador">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Producao">
+    <Hierarchy name="Producao" visible="true" hasAll="true" primaryKey="pkProducao">
+      <Table name="dim_producao">
+      </Table>
+      <Level name="Tipo da Produ&#231;&#227;o" visible="true" column="TIPO_PRODUCAO" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Tipo da Produ&#231;&#227;o">
+      </Level>
+      <Level name="Titulo da Produ&#231;&#227;o" visible="true" column="TITULO_PRODUCAO" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" caption="Titulo da Produ&#231;&#227;o">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Colaborador">
+    <Hierarchy name="Colaborador" visible="true" hasAll="true" primaryKey="pkPesquisador">
+      <Table name="dim_pesquisador">
+      </Table>
+      <Level name="Titula&#231;&#227;o" visible="true" column="TITULACAO" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Titula&#231;&#227;o do Colaborador">
+      </Level>
+      <Level name="Nome Colaborador" visible="true" column="NOME_PESQUISADOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome do Colaborador">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Campus Pesquisador">
+    <Hierarchy name="Campus Pesquisador" visible="true" hasAll="true" primaryKey="pkCampus">
+      <Table name="dim_campus">
+      </Table>
+      <Level name="Nome do Campus Pesquisador" visible="true" column="NOME_CAMPUS" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome do Campus Pesquisador">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Tempo">
+    <Hierarchy name="Tempo" visible="true" hasAll="true" primaryKey="pkTempo">
+      <Table name="dim_tempo">
+      </Table>
+      <Level name="Ano" visible="true" column="YEAR_NUMBER" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano da Publica&#231;&#227;o">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Campus Colaborador">
+    <Hierarchy name="Campus Colaborador" visible="true" hasAll="true" primaryKey="pkCampus">
+      <Table name="dim_campus">
+      </Table>
+      <Level name="Nome do Campus" visible="true" column="NOME_CAMPUS" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome do Campus do Colaborador">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Area de Conhecimento">
+    <Hierarchy name="Area de Conhecimento" visible="true" hasAll="true" primaryKey="fkProducao" primaryKeyTable="dim_producao_areas">
+      <Join leftKey="fkArea" rightAlias="" rightKey="pkArea">
+        <Table name="dim_producao_areas" schema="" alias="">
+        </Table>
+        <Table name="dim_areas" schema="" alias="">
+        </Table>
+      </Join>
+      <Level name="Grande Area" visible="true" table="dim_areas" column="GRANDE_AREA" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Grande &#193;rea">
+      </Level>
+      <Level name="Area" visible="true" table="dim_areas" column="AREA" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="&#193;rea">
+      </Level>
+      <Level name="Sub Area" visible="true" table="dim_areas" column="SUB_AREA" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Sub &#193;rea">
+      </Level>
+      <Level name="Especialidade" visible="true" table="dim_areas" column="ESPECIALIDADE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Especialidade">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Colaboracao" visible="true" cache="true" enabled="true">
+    <Table name="fato_colaboracao">
+    </Table>
+    <DimensionUsage source="Pesquisador" name="Pesquisador" visible="true" foreignKey="fkPesquisador" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Colaborador" name="Colaborador" visible="true" foreignKey="fkColaborador" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Producao" name="Producao" visible="true" foreignKey="fkProducao" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Campus Pesquisador" name="Campus Pesquisador" caption="Campus Pesquisador" visible="true" foreignKey="fkCampusPesquisador" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Campus Colaborador" name="Campus Colaborador" caption="Campus Colaborador" visible="true" foreignKey="fkCampusColaborador" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Tempo" name="Tempo" visible="true" foreignKey="fkTempo" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Area de Conhecimento" name="Area de Conhecimento" visible="true" foreignKey="fkProducao" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Quantidade de Produ&#231;&#227;o" column="fkProducao" aggregator="count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
