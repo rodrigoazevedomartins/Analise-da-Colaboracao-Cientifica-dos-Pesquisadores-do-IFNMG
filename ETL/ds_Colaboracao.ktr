@@ -6,6 +6,7 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -100,7 +101,9 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Colaboracao</from><to>ds_colaboracao</to><enabled>Y</enabled> </hop>
+  <hop> <from>Colaboracao</from><to>campus_pesquisador</to><enabled>Y</enabled> </hop>
+  <hop> <from>campus_pesquisador</from><to>campus_colaborador</to><enabled>Y</enabled> </hop>
+  <hop> <from>campus_colaborador</from><to>ds_colaboracao</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Colaboracao</name>
@@ -152,7 +155,7 @@
     </filters>
     <fields>
       <field>
-        <name>TITULO-ARTIGO</name>
+        <name>TITULO_PRODUCAO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -167,7 +170,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>ANO-ARTIGO</name>
+        <name>ANO_PRODUCAO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -182,7 +185,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>NOME-PESQUISADOR</name>
+        <name>NOME_PESQUISADOR_PRODUCAO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -197,7 +200,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>CITACAO-PESQUISADOR</name>
+        <name>CITACAO_PESQUISADOR</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -212,7 +215,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>NOME-COLABORADOR</name>
+        <name>NOME_COLABORADOR_PRODUCAO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -227,7 +230,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>CITACAO-COLABORADOR</name>
+        <name>CITACAO_COLABORADOR</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -269,8 +272,92 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>295</xloc>
-      <yloc>207</yloc>
+      <xloc>208</xloc>
+      <yloc>49</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>campus_colaborador</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>conexao</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>ds_pesquisador</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>NOME_COLABORADOR_PRODUCAO</name>
+        <field>NOME_PESQUISADOR</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>NOME_CAMPUS</name>
+        <rename>CAMPUS_COLABORADOR</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>580</xloc>
+      <yloc>49</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>campus_pesquisador</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>conexao</connection>
+    <cache>N</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>ds_pesquisador</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>NOME_PESQUISADOR_PRODUCAO</name>
+        <field>NOME_PESQUISADOR</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>NOME_CAMPUS</name>
+        <rename>CAMPUS_PESQUISADOR</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>399</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -290,7 +377,7 @@
     <schema/>
     <table>ds_colaboracao</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
@@ -302,37 +389,45 @@
     <tablename_field/>
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>Y</return_keys>
-    <return_field>colaboracaoid</return_field>
+    <return_field>idColaboracao</return_field>
     <fields>
         <field>
-          <column_name>TITULO-ARTIGO</column_name>
-          <stream_name>TITULO-ARTIGO</stream_name>
+          <column_name>TITULO_PRODUCAO</column_name>
+          <stream_name>TITULO_PRODUCAO</stream_name>
         </field>
         <field>
-          <column_name>ANO-ARTIGO</column_name>
-          <stream_name>ANO-ARTIGO</stream_name>
+          <column_name>ANO_PRODUCAO</column_name>
+          <stream_name>ANO_PRODUCAO</stream_name>
         </field>
         <field>
-          <column_name>NOME-PESQUISADOR</column_name>
-          <stream_name>NOME-PESQUISADOR</stream_name>
+          <column_name>NOME_PESQUISADOR</column_name>
+          <stream_name>NOME_PESQUISADOR_PRODUCAO</stream_name>
         </field>
         <field>
-          <column_name>CITACAO-PESQUISADOR</column_name>
-          <stream_name>CITACAO-PESQUISADOR</stream_name>
+          <column_name>CITACAO_PESQUISADOR</column_name>
+          <stream_name>CITACAO_PESQUISADOR</stream_name>
         </field>
         <field>
-          <column_name>NOME-COLABORADOR</column_name>
-          <stream_name>NOME-COLABORADOR</stream_name>
+          <column_name>NOME_COLABORADOR</column_name>
+          <stream_name>NOME_COLABORADOR_PRODUCAO</stream_name>
         </field>
         <field>
-          <column_name>CITACAO-COLABORADOR</column_name>
-          <stream_name>CITACAO-COLABORADOR</stream_name>
+          <column_name>CITACAO_COLABORADOR</column_name>
+          <stream_name>CITACAO_COLABORADOR</stream_name>
+        </field>
+        <field>
+          <column_name>CAMPUS_PESQUISADOR</column_name>
+          <stream_name>CAMPUS_PESQUISADOR</stream_name>
+        </field>
+        <field>
+          <column_name>CAMPUS_COLABORADOR</column_name>
+          <stream_name>CAMPUS_COLABORADOR</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>466</xloc>
-      <yloc>208</yloc>
+      <xloc>748</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

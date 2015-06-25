@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>fato_colaboracao</name>
+    <name>dim_Producao_Areas</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,9 +67,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;03&#x2f;13 14&#x3a;11&#x3a;48.723</created_date>
+  <created_date>2015&#x2f;04&#x2f;23 17&#x3a;24&#x3a;33.303</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;03&#x2f;13 14&#x3a;11&#x3a;48.723</modified_date>
+  <modified_date>2015&#x2f;04&#x2f;23 17&#x3a;24&#x3a;33.303</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -101,18 +101,82 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>ds_colaboracao</from><to>String operations</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>fato_colaboracao</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>String operations</from><to>If field value is null</to><enabled>Y</enabled> </hop>
+  <hop> <from>ds_producao</from><to>String operations</to><enabled>Y</enabled> </hop>
+  <hop> <from>area conhecimento 1</from><to>area conhecimento 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>area conhecimento 2</from><to>area conhecimento 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>area conhecimento 3</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>
+  <hop> <from>dim_producao</from><to>area conhecimento 1</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>dim_producao</to><enabled>Y</enabled> </hop>
+  <hop> <from>Row Normaliser</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_producao</from><to>dim_tempo</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_campus_pesquisador</from><to>dim_campus_colaborador</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_campus_colaborador</from><to>dim_producao</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_pesquisador</from><to>dim_colaborador</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_colaborador</from><to>dim_campus_pesquisador</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_tempo</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>String operations</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>dim_pesquisador</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>dim_producao_areas</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>dim_producao_areas</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <schema/>
+      <table>dim_producao_areas</table>
+      <connection>conexao</connection>
+      <commit>100</commit>
+      <update>Y</update>
+      <fields>
+        <key>
+          <name>fkProducao</name>
+          <lookup>chave_dominio_producao</lookup>
+        </key>
+        <key>
+          <name>fkArea</name>
+          <lookup>chave_dominio_area</lookup>
+        </key>
+        <date>
+          <name/>
+          <from>date_from</from>
+          <to>date_to</to>
+        </date>
+        <field>
+          <name>fkProducao</name>
+          <lookup>fkProducao</lookup>
+          <update>Insert</update>
+        </field>
+        <field>
+          <name>fkArea</name>
+          <lookup>fkArea</lookup>
+          <update>Insert</update>
+        </field>
+        <return>
+          <name>pkProducaoArea</name>
+          <rename/>
+          <creation_method>autoinc</creation_method>
+          <use_autoinc>Y</use_autoinc>
+          <version>version</version>
+        </return>
+      </fields>
+      <sequence/>
+      <min_year>1900</min_year>
+      <max_year>2199</max_year>
+      <cache_size>-1</cache_size>
+      <preload_cache>N</preload_cache>
+      <use_start_date_alternative>N</use_start_date_alternative>
+      <start_date_alternative>none</start_date_alternative>
+      <start_date_field_name/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>268</xloc>
+      <yloc>333</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
@@ -129,15 +193,171 @@
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>fkPesquisador</leftvalue>
- <function>&#x3c;&#x3e;</function>
- <rightvalue>fkColaborador</rightvalue>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>AREAS-CONHECIMENTO</leftvalue>
+     <function>LIKE</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>FKAREA1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>fkArea</leftvalue>
+     <function>IS NOT NULL</function>
+     <rightvalue/>
+     <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>     </condition>
+    </conditions>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>AREAS-CONHECIMENTO</leftvalue>
+     <function>LIKE</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>FKAREA2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>GRANDE_AREA_DO_CONHECIMENTO_2</leftvalue>
+     <function>&#x3c;&#x3e;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>N&#xc3;O INFORMADO</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>     </condition>
+    </conditions>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>AREAS-CONHECIMENTO</leftvalue>
+     <function>LIKE</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>FKAREA3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>GRANDE_AREA_DO_CONHECIMENTO_3</leftvalue>
+     <function>&#x3c;&#x3e;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>N&#xc3;O INFORMADO</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value>     </condition>
+    </conditions>
+   </condition>
+  </conditions>
  </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>385</xloc>
-      <yloc>483</yloc>
+      <xloc>293</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>If field value is null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>Y</selectFields>
+      <selectValuesType>N</selectValuesType>
+      <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_1</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_1</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_1</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_1</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_2</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_2</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_2</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_2</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_3</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_3</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_3</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_3</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>349</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -168,8 +388,37 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>564</xloc>
-      <yloc>83</yloc>
+      <xloc>479</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Row Normaliser</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <typefield>AREAS-CONHECIMENTO</typefield>
+    <fields>      <field>        <name>fkArea1</name>
+        <value>FKAREA1</value>
+        <norm>fkArea</norm>
+        </field>      <field>        <name>fkArea2</name>
+        <value>FKAREA2</value>
+        <norm>fkArea</norm>
+        </field>      <field>        <name>fkArea3</name>
+        <value>FKAREA3</value>
+        <norm>fkArea</norm>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>439</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -200,7 +449,7 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>ANO_PRODUCAO</in_stream_name>
+        <in_stream_name>GRANDE_AREA_DO_CONHECIMENTO_1</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -213,7 +462,20 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>NOME_PESQUISADOR</in_stream_name>
+        <in_stream_name>AREA_DO_CONHECIMENTO_1</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>SUB_AREA_DO_CONHECIMENTO_1</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -226,7 +488,111 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>NOME_COLABORADOR</in_stream_name>
+        <in_stream_name>ESPECIALIDADE_DO_CONHECIMENTO_1</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>GRANDE_AREA_DO_CONHECIMENTO_2</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>AREA_DO_CONHECIMENTO_2</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>SUB_AREA_DO_CONHECIMENTO_2</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ESPECIALIDADE_DO_CONHECIMENTO_2</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>SUB_AREA_DO_CONHECIMENTO_3</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>AREA_DO_CONHECIMENTO_3</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>SUB_AREA_DO_CONHECIMENTO_3</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ESPECIALIDADE_DO_CONHECIMENTO_3</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -241,8 +607,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>278</xloc>
-      <yloc>83</yloc>
+      <xloc>210</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -258,22 +624,21 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <store_values>N</store_values>
+      <store_values>Y</store_values>
       <reject_duplicate_row>N</reject_duplicate_row>
       <error_description/>
-    <fields>      <field>        <name>fkPesquisador</name>
-        </field>      <field>        <name>fkColaborador</name>
-        </field>      <field>        <name>fkProducao</name>
+    <fields>      <field>        <name>fkProducao</name>
+        </field>      <field>        <name>fkArea</name>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>648</xloc>
-      <yloc>483</yloc>
+      <xloc>155</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dim_campus_colaborador</name>
+    <name>area conhecimento 1</name>
     <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -289,33 +654,51 @@
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
-      <table>dim_campus</table>
+      <table>dim_areas</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
-        <name>CAMPUS_COLABORADOR</name>
-        <field>NOME_CAMPUS</field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_1</name>
+        <field>GRANDE_AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>AREA_DO_CONHECIMENTO_1</name>
+        <field>AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>SUB_AREA_DO_CONHECIMENTO_1</name>
+        <field>SUB_AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_1</name>
+        <field>ESPECIALIDADE</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
       <value>
-        <name>pkCampus</name>
-        <rename>fkCampusColaborador</rename>
+        <name>pkArea</name>
+        <rename>fkArea1</rename>
         <default/>
         <type>Integer</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>119</xloc>
-      <yloc>199</yloc>
+      <xloc>823</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dim_campus_pesquisador</name>
+    <name>area conhecimento 2</name>
     <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -331,33 +714,51 @@
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
-      <table>dim_campus</table>
+      <table>dim_areas</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
-        <name>CAMPUS_PESQUISADOR</name>
-        <field>NOME_CAMPUS</field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_2</name>
+        <field>GRANDE_AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>AREA_DO_CONHECIMENTO_2</name>
+        <field>AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>SUB_AREA_DO_CONHECIMENTO_2</name>
+        <field>SUB_AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_2</name>
+        <field>ESPECIALIDADE</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
       <value>
-        <name>pkCampus</name>
-        <rename>fkCampusPesquisador</rename>
+        <name>pkArea</name>
+        <rename>fkArea2</rename>
         <default/>
         <type>Integer</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>428</xloc>
-      <yloc>199</yloc>
+      <xloc>823</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dim_colaborador</name>
+    <name>area conhecimento 3</name>
     <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -373,69 +774,45 @@
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
-      <table>dim_pesquisador</table>
+      <table>dim_areas</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
-        <name>NOME_COLABORADOR</name>
-        <field>NOME_PESQUISADOR</field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_3</name>
+        <field>GRANDE_AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>AREA_DO_CONHECIMENTO_3</name>
+        <field>AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>SUB_AREA_DO_CONHECIMENTO_3</name>
+        <field>SUB_AREA</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_3</name>
+        <field>ESPECIALIDADE</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
       <value>
-        <name>pkPesquisador</name>
-        <rename>fkColaborador</rename>
+        <name>pkArea</name>
+        <rename>fkArea3</rename>
         <default/>
         <type>Integer</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>647</xloc>
-      <yloc>199</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>dim_pesquisador</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexao</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>dim_pesquisador</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>Y</eat_row_on_failure>
-      <key>
-        <name>NOME_PESQUISADOR</name>
-        <field>NOME_PESQUISADOR</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>pkPesquisador</name>
-        <rename>fkPesquisador</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>910</xloc>
-      <yloc>199</yloc>
+      <xloc>606</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -476,56 +853,14 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>382</xloc>
-      <yloc>297</yloc>
+      <xloc>622</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dim_tempo</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexao</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>dim_tempo</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>ANO_PRODUCAO</name>
-        <field>year_number</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>pkTempo</name>
-        <rename>fkTempo</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>687</xloc>
-      <yloc>297</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>ds_colaboracao</name>
+    <name>ds_producao</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -536,78 +871,16 @@
            <schema_name/>
            </partitioning>
     <connection>conexao</connection>
-    <sql>SELECT&#xd;&#xa;  idColaboracao&#xd;&#xa;, TITULO_PRODUCAO&#xd;&#xa;, ANO_PRODUCAO&#xd;&#xa;, NOME_PESQUISADOR&#xd;&#xa;, CITACAO_PESQUISADOR&#xd;&#xa;, NOME_COLABORADOR&#xd;&#xa;, CITACAO_COLABORADOR&#xd;&#xa;, CAMPUS_PESQUISADOR&#xd;&#xa;, CAMPUS_COLABORADOR&#xd;&#xa;FROM ds_colaboracao&#xd;&#xa;</sql>
-    <limit>0</limit>
+    <sql>SELECT&#xd;&#xa;  idProducao&#xd;&#xa;, TITULO_PRODUCAO&#xd;&#xa;, GRANDE_AREA_DO_CONHECIMENTO_1&#xd;&#xa;, AREA_DO_CONHECIMENTO_1&#xd;&#xa;, SUB_AREA_DO_CONHECIMENTO_1&#xd;&#xa;, ESPECIALIDADE_DO_CONHECIMENTO_1&#xd;&#xa;, GRANDE_AREA_DO_CONHECIMENTO_2&#xd;&#xa;, AREA_DO_CONHECIMENTO_2&#xd;&#xa;, SUB_AREA_DO_CONHECIMENTO_2&#xd;&#xa;, ESPECIALIDADE_DO_CONHECIMENTO_2&#xd;&#xa;, GRANDE_AREA_DO_CONHECIMENTO_3&#xd;&#xa;, AREA_DO_CONHECIMENTO_3&#xd;&#xa;, SUB_AREA_DO_CONHECIMENTO_3&#xd;&#xa;, ESPECIALIDADE_DO_CONHECIMENTO_3&#xd;&#xa;FROM ds_producao&#xd;&#xa;</sql>
+    <limit/>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>39</xloc>
-      <yloc>83</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>fato_colaboracao</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexao</connection>
-    <schema/>
-    <table>fato_colaboracao</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>Y</return_keys>
-    <return_field>pkColaboracao</return_field>
-    <fields>
-        <field>
-          <column_name>fkPesquisador</column_name>
-          <stream_name>fkPesquisador</stream_name>
-        </field>
-        <field>
-          <column_name>fkCampusPesquisador</column_name>
-          <stream_name>fkCampusPesquisador</stream_name>
-        </field>
-        <field>
-          <column_name>fkColaborador</column_name>
-          <stream_name>fkColaborador</stream_name>
-        </field>
-        <field>
-          <column_name>fkCampusColaborador</column_name>
-          <stream_name>fkCampusColaborador</stream_name>
-        </field>
-        <field>
-          <column_name>fkProducao</column_name>
-          <stream_name>fkProducao</stream_name>
-        </field>
-        <field>
-          <column_name>fkTempo</column_name>
-          <stream_name>fkTempo</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>894</xloc>
-      <yloc>483</yloc>
+      <xloc>85</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

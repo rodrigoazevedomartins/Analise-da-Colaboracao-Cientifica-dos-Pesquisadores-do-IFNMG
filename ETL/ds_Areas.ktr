@@ -6,6 +6,7 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -152,7 +153,7 @@
     </filters>
     <fields>
       <field>
-        <name>GRANDE-AREA-DO-CONHECIMENTO-1</name>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_1</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -167,7 +168,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>AREA-DO-CONHECIMENTO-1</name>
+        <name>AREA_DO_CONHECIMENTO_1</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -182,7 +183,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>SUB-AREA-DO-CONHECIMENTO-1</name>
+        <name>SUB_AREA_DO_CONHECIMENTO_1</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -197,7 +198,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>GRANDE-AREA-DO-CONHECIMENTO-2</name>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_1</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -212,7 +213,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>AREA-DO-CONHECIMENTO-2</name>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_2</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -227,7 +228,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>SUB-AREA-DO-CONHECIMENTO-2</name>
+        <name>AREA_DO_CONHECIMENTO_2</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -242,7 +243,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>GRANDE-AREA-DO-CONHECIMENTO-3</name>
+        <name>SUB_AREA_DO_CONHECIMENTO_2</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -257,7 +258,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>AREA-DO-CONHECIMENTO-3</name>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_2</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -272,7 +273,52 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>SUB-AREA-DO-CONHECIMENTO-3</name>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_3</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -335,7 +381,7 @@
     <schema/>
     <table>ds_areas</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
@@ -347,43 +393,55 @@
     <tablename_field/>
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>Y</return_keys>
-    <return_field>areaid</return_field>
+    <return_field>idArea</return_field>
     <fields>
         <field>
-          <column_name>GRANDE-AREA-DO-CONHECIMENTO-1</column_name>
-          <stream_name>GRANDE-AREA-DO-CONHECIMENTO-1</stream_name>
+          <column_name>GRANDE_AREA_DO_CONHECIMENTO_1</column_name>
+          <stream_name>GRANDE_AREA_DO_CONHECIMENTO_1</stream_name>
         </field>
         <field>
-          <column_name>AREA-DO-CONHECIMENTO-1</column_name>
-          <stream_name>AREA-DO-CONHECIMENTO-1</stream_name>
+          <column_name>AREA_DO_CONHECIMENTO_1</column_name>
+          <stream_name>AREA_DO_CONHECIMENTO_1</stream_name>
         </field>
         <field>
-          <column_name>SUB-AREA-DO-CONHECIMENTO-1</column_name>
-          <stream_name>SUB-AREA-DO-CONHECIMENTO-1</stream_name>
+          <column_name>SUB_AREA_DO_CONHECIMENTO_1</column_name>
+          <stream_name>SUB_AREA_DO_CONHECIMENTO_1</stream_name>
         </field>
         <field>
-          <column_name>GRANDE-AREA-DO-CONHECIMENTO-2</column_name>
-          <stream_name>GRANDE-AREA-DO-CONHECIMENTO-2</stream_name>
+          <column_name>ESPECIALIDADE_DO_CONHECIMENTO_1</column_name>
+          <stream_name>ESPECIALIDADE_DO_CONHECIMENTO_1</stream_name>
         </field>
         <field>
-          <column_name>AREA-DO-CONHECIMENTO-2</column_name>
-          <stream_name>AREA-DO-CONHECIMENTO-2</stream_name>
+          <column_name>GRANDE_AREA_DO_CONHECIMENTO_2</column_name>
+          <stream_name>GRANDE_AREA_DO_CONHECIMENTO_2</stream_name>
         </field>
         <field>
-          <column_name>SUB-AREA-DO-CONHECIMENTO-2</column_name>
-          <stream_name>SUB-AREA-DO-CONHECIMENTO-2</stream_name>
+          <column_name>AREA_DO_CONHECIMENTO_2</column_name>
+          <stream_name>AREA_DO_CONHECIMENTO_2</stream_name>
         </field>
         <field>
-          <column_name>GRANDE-AREA-DO-CONHECIMENTO-3</column_name>
-          <stream_name>GRANDE-AREA-DO-CONHECIMENTO-3</stream_name>
+          <column_name>SUB_AREA_DO_CONHECIMENTO_2</column_name>
+          <stream_name>SUB_AREA_DO_CONHECIMENTO_2</stream_name>
         </field>
         <field>
-          <column_name>AREA-DO-CONHECIMENTO-3</column_name>
-          <stream_name>AREA-DO-CONHECIMENTO-3</stream_name>
+          <column_name>ESPECIALIDADE_DO_CONHECIMENTO_2</column_name>
+          <stream_name>ESPECIALIDADE_DO_CONHECIMENTO_2</stream_name>
         </field>
         <field>
-          <column_name>SUB-AREA-DO-CONHECIMENTO-3</column_name>
-          <stream_name>SUB-AREA-DO-CONHECIMENTO-3</stream_name>
+          <column_name>GRANDE_AREA_DO_CONHECIMENTO_3</column_name>
+          <stream_name>GRANDE_AREA_DO_CONHECIMENTO_3</stream_name>
+        </field>
+        <field>
+          <column_name>AREA_DO_CONHECIMENTO_3</column_name>
+          <stream_name>AREA_DO_CONHECIMENTO_3</stream_name>
+        </field>
+        <field>
+          <column_name>SUB_AREA_DO_CONHECIMENTO_3</column_name>
+          <stream_name>SUB_AREA_DO_CONHECIMENTO_3</stream_name>
+        </field>
+        <field>
+          <column_name>ESPECIALIDADE_DO_CONHECIMENTO_3</column_name>
+          <stream_name>ESPECIALIDADE_DO_CONHECIMENTO_3</stream_name>
         </field>
     </fields>
      <cluster_schema/>

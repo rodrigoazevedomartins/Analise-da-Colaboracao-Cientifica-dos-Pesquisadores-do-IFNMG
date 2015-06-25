@@ -103,16 +103,13 @@
   <order>
   <hop> <from>String operations</from><to>If field value is null</to><enabled>Y</enabled> </hop>
   <hop> <from>If field value is null</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>ds_area</from><to>GRANDE-AREA</to><enabled>Y</enabled> </hop>
-  <hop> <from>GRANDE-AREA</from><to>AREA</to><enabled>Y</enabled> </hop>
-  <hop> <from>AREA</from><to>SUB-AREA</to><enabled>Y</enabled> </hop>
-  <hop> <from>SUB-AREA</from><to>Filtra n&#xba; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>SUB-AREA</from><to>Filtra n&#xba; 1</to><enabled>Y</enabled> </hop>
-  <hop> <from>SUB-AREA</from><to>Filtra n&#xba; 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filtra n&#xba; 1</from><to>String operations</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filtra n&#xba; 2</from><to>String operations</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filtra n&#xba; 3</from><to>String operations</to><enabled>Y</enabled> </hop>
+  <hop> <from>ds_areas</from><to>GRANDE_AREA</to><enabled>Y</enabled> </hop>
+  <hop> <from>GRANDE_AREA</from><to>AREA</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>dim_areas</to><enabled>Y</enabled> </hop>
+  <hop> <from>AREA</from><to>SUB_AREA</to><enabled>Y</enabled> </hop>
+  <hop> <from>SUB_AREA</from><to>ESPECIALIDADE</to><enabled>Y</enabled> </hop>
+  <hop> <from>ESPECIALIDADE</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>String operations</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>AREA</name>
@@ -125,15 +122,15 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-   <typefield>NOME-AREA</typefield>
-    <fields>      <field>        <name>AREA-DO-CONHECIMENTO-1</name>
-        <value>AREA-DO-CONHECIMENTO-1</value>
+   <typefield>NOME_AREA</typefield>
+    <fields>      <field>        <name>AREA_DO_CONHECIMENTO_1</name>
+        <value>AREA_DO_CONHECIMENTO_1</value>
         <norm>AREA</norm>
-        </field>      <field>        <name>AREA-DO-CONHECIMENTO-2</name>
-        <value>AREA-DO-CONHECIMENTO-2</value>
+        </field>      <field>        <name>AREA_DO_CONHECIMENTO_2</name>
+        <value>AREA_DO_CONHECIMENTO_2</value>
         <norm>AREA</norm>
-        </field>      <field>        <name>AREA-DO-CONHECIMENTO-3</name>
-        <value>AREA-DO-CONHECIMENTO-3</value>
+        </field>      <field>        <name>AREA_DO_CONHECIMENTO_3</name>
+        <value>AREA_DO_CONHECIMENTO_3</value>
         <norm>AREA</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -144,151 +141,7 @@
     </step>
 
   <step>
-    <name>Filtra n&#xba; 1</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>String operations</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>NOME-GRANDE-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>GRANDE-AREA-DO-CONHECIMENTO-1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>NOME-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>AREA-DO-CONHECIMENTO-1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>NOME-SUB-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>SUB-AREA-DO-CONHECIMENTO-1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>438</xloc>
-      <yloc>148</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filtra n&#xba; 2</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>String operations</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>NOME-GRANDE-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>GRANDE-AREA-DO-CONHECIMENTO-2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>NOME-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>AREA-DO-CONHECIMENTO-2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>NOME-SUB-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>SUB-AREA-DO-CONHECIMENTO-2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>297</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filtra n&#xba; 3</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>String operations</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>NOME-GRANDE-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>GRANDE-AREA-DO-CONHECIMENTO-3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>NOME-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>AREA-DO-CONHECIMENTO-3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>NOME-SUB-AREA</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>SUB-AREA-DO-CONHECIMENTO-3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>627</xloc>
-      <yloc>148</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>GRANDE-AREA</name>
+    <name>ESPECIALIDADE</name>
     <type>Normaliser</type>
     <description/>
     <distribute>Y</distribute>
@@ -298,16 +151,171 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-   <typefield>NOME-GRANDE-AREA</typefield>
-    <fields>      <field>        <name>GRANDE-AREA-DO-CONHECIMENTO-1</name>
-        <value>GRANDE-AREA-DO-CONHECIMENTO-1</value>
-        <norm>GRANDE-AREA</norm>
-        </field>      <field>        <name>GRANDE-AREA-DO-CONHECIMENTO-2</name>
-        <value>GRANDE-AREA-DO-CONHECIMENTO-2</value>
-        <norm>GRANDE-AREA</norm>
-        </field>      <field>        <name>GRANDE-AREA-DO-CONHECIMENTO-3</name>
-        <value>GRANDE-AREA-DO-CONHECIMENTO-3</value>
-        <norm>GRANDE-AREA</norm>
+   <typefield>NOME_ESPECIALIDADE</typefield>
+    <fields>      <field>        <name>ESPECIALIDADE_DO_CONHECIMENTO_1</name>
+        <value>ESPECIALIDADE_DO_CONHECIMENTO_1</value>
+        <norm>ESPECIALIDADE</norm>
+        </field>      <field>        <name>ESPECIALIDADE_DO_CONHECIMENTO_2</name>
+        <value>ESPECIALIDADE_DO_CONHECIMENTO_2</value>
+        <norm>ESPECIALIDADE</norm>
+        </field>      <field>        <name>ESPECIALIDADE_DO_CONHECIMENTO_3</name>
+        <value>ESPECIALIDADE_DO_CONHECIMENTO_3</value>
+        <norm>ESPECIALIDADE</norm>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>562</xloc>
+      <yloc>28</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>String operations</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>NOME_GRANDE_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>GRANDE_AREA_DO_CONHECIMENTO_1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>AREA_DO_CONHECIMENTO_1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_SUB_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>SUB_AREA_DO_CONHECIMENTO_1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_ESPECIALIDADE</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>ESPECIALIDADE_DO_CONHECIMENTO_1</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    </conditions>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>NOME_GRANDE_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>GRANDE_AREA_DO_CONHECIMENTO_2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>AREA_DO_CONHECIMENTO_2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_SUB_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>SUB_AREA_DO_CONHECIMENTO_2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_ESPECIALIDADE</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>ESPECIALIDADE_DO_CONHECIMENTO_2</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    </conditions>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>NOME_GRANDE_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>GRANDE_AREA_DO_CONHECIMENTO_3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>AREA_DO_CONHECIMENTO_3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_SUB_AREA</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>SUB_AREA_DO_CONHECIMENTO_3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>AND</operator>
+     <leftvalue>NOME_ESPECIALIDADE</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>ESPECIALIDADE_DO_CONHECIMENTO_3</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    </conditions>
+   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>494</xloc>
+      <yloc>190</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>GRANDE_AREA</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <typefield>NOME_GRANDE_AREA</typefield>
+    <fields>      <field>        <name>GRANDE_AREA_DO_CONHECIMENTO_1</name>
+        <value>GRANDE_AREA_DO_CONHECIMENTO_1</value>
+        <norm>GRANDE_AREA</norm>
+        </field>      <field>        <name>GRANDE_AREA_DO_CONHECIMENTO_2</name>
+        <value>GRANDE_AREA_DO_CONHECIMENTO_2</value>
+        <norm>GRANDE_AREA</norm>
+        </field>      <field>        <name>GRANDE_AREA_DO_CONHECIMENTO_3</name>
+        <value>GRANDE_AREA_DO_CONHECIMENTO_3</value>
+        <norm>GRANDE_AREA</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>178</xloc>
@@ -336,7 +344,7 @@
       </valuetypes>
     <fields>
       <field>
-        <name>GRANDE-AREA</name>
+        <name>GRANDE_AREA</name>
         <value>N&#xc3;O INFORMADO</value>
         <mask/>
         <set_empty_string>N</set_empty_string>
@@ -348,7 +356,13 @@
         <set_empty_string>N</set_empty_string>
         </field>
       <field>
-        <name>SUB-AREA</name>
+        <name>SUB_AREA</name>
+        <value>N&#xc3;O INFORMADO</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>ESPECIALIDADE</name>
         <value>N&#xc3;O INFORMADO</value>
         <mask/>
         <set_empty_string>N</set_empty_string>
@@ -356,36 +370,36 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>611</xloc>
-      <yloc>313</yloc>
+      <xloc>606</xloc>
+      <yloc>326</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>SUB-AREA</name>
+    <name>SUB_AREA</name>
     <type>Normaliser</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-   <typefield>NOME-SUB-AREA</typefield>
-    <fields>      <field>        <name>SUB-AREA-DO-CONHECIMENTO-1</name>
-        <value>SUB-AREA-DO-CONHECIMENTO-1</value>
-        <norm>SUB-AREA</norm>
-        </field>      <field>        <name>SUB-AREA-DO-CONHECIMENTO-2</name>
-        <value>SUB-AREA-DO-CONHECIMENTO-2</value>
-        <norm>SUB-AREA</norm>
-        </field>      <field>        <name>SUB-AREA-DO-CONHECIMENTO-3</name>
-        <value>SUB-AREA-DO-CONHECIMENTO-3</value>
-        <norm>SUB-AREA</norm>
+   <typefield>NOME_SUB_AREA</typefield>
+    <fields>      <field>        <name>SUB_AREA_DO_CONHECIMENTO_1</name>
+        <value>SUB_AREA_DO_CONHECIMENTO_1</value>
+        <norm>SUB_AREA</norm>
+        </field>      <field>        <name>SUB_AREA_DO_CONHECIMENTO_2</name>
+        <value>SUB_AREA_DO_CONHECIMENTO_2</value>
+        <norm>SUB_AREA</norm>
+        </field>      <field>        <name>SUB_AREA_DO_CONHECIMENTO_3</name>
+        <value>SUB_AREA_DO_CONHECIMENTO_3</value>
+        <norm>SUB_AREA</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>431</xloc>
+      <xloc>423</xloc>
       <yloc>28</yloc>
       <draw>Y</draw>
       </GUI>
@@ -404,7 +418,7 @@
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>GRANDE-AREA</in_stream_name>
+        <in_stream_name>GRANDE_AREA</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -430,7 +444,20 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>SUB-AREA</in_stream_name>
+        <in_stream_name>SUB_AREA</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ESPECIALIDADE</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -445,8 +472,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>443</xloc>
-      <yloc>313</yloc>
+      <xloc>429</xloc>
+      <yloc>326</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -465,13 +492,14 @@
       <store_values>Y</store_values>
       <reject_duplicate_row>N</reject_duplicate_row>
       <error_description/>
-    <fields>      <field>        <name>GRANDE-AREA</name>
+    <fields>      <field>        <name>GRANDE_AREA</name>
         </field>      <field>        <name>AREA</name>
-        </field>      <field>        <name>SUB-AREA</name>
+        </field>      <field>        <name>SUB_AREA</name>
+        </field>      <field>        <name>ESPECIALIDADE</name>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>761</xloc>
-      <yloc>313</yloc>
+      <xloc>763</xloc>
+      <yloc>326</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -494,8 +522,8 @@
       <update>Y</update>
       <fields>
         <key>
-          <name>areaid</name>
-          <lookup>chave-dominio</lookup>
+          <name>idArea</name>
+          <lookup>chave_dominio</lookup>
         </key>
         <date>
           <name/>
@@ -503,8 +531,8 @@
           <to>date_to</to>
         </date>
         <field>
-          <name>GRANDE-AREA</name>
-          <lookup>GRANDE-AREA</lookup>
+          <name>GRANDE_AREA</name>
+          <lookup>GRANDE_AREA</lookup>
           <update>Insert</update>
         </field>
         <field>
@@ -513,15 +541,20 @@
           <update>Insert</update>
         </field>
         <field>
-          <name>SUB-AREA</name>
-          <lookup>SUB-AREA</lookup>
+          <name>SUB_AREA</name>
+          <lookup>SUB_AREA</lookup>
+          <update>Insert</update>
+        </field>
+        <field>
+          <name>ESPECIALIDADE</name>
+          <lookup>ESPECIALIDADE</lookup>
           <update>Insert</update>
         </field>
         <return>
-          <name>pkarea</name>
+          <name>pkArea</name>
           <rename/>
-          <creation_method>tablemax</creation_method>
-          <use_autoinc>N</use_autoinc>
+          <creation_method>autoinc</creation_method>
+          <use_autoinc>Y</use_autoinc>
           <version>version</version>
         </return>
       </fields>
@@ -535,14 +568,14 @@
       <start_date_field_name/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>762</xloc>
+      <xloc>763</xloc>
       <yloc>413</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>ds_area</name>
+    <name>ds_areas</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -553,7 +586,7 @@
            <schema_name/>
            </partitioning>
     <connection>conexao</connection>
-    <sql>SELECT&#xd;&#xa;  areaid&#xd;&#xa;, &#x60;GRANDE-AREA-DO-CONHECIMENTO-1&#x60;&#xd;&#xa;, &#x60;AREA-DO-CONHECIMENTO-1&#x60;&#xd;&#xa;, &#x60;SUB-AREA-DO-CONHECIMENTO-1&#x60;&#xd;&#xa;, &#x60;GRANDE-AREA-DO-CONHECIMENTO-2&#x60;&#xd;&#xa;, &#x60;AREA-DO-CONHECIMENTO-2&#x60;&#xd;&#xa;, &#x60;SUB-AREA-DO-CONHECIMENTO-2&#x60;&#xd;&#xa;, &#x60;GRANDE-AREA-DO-CONHECIMENTO-3&#x60;&#xd;&#xa;, &#x60;AREA-DO-CONHECIMENTO-3&#x60;&#xd;&#xa;, &#x60;SUB-AREA-DO-CONHECIMENTO-3&#x60;&#xd;&#xa;FROM ds_areas&#xd;&#xa;</sql>
+    <sql>SELECT&#xd;&#xa;  GRANDE_AREA_DO_CONHECIMENTO_1&#xd;&#xa;, AREA_DO_CONHECIMENTO_1&#xd;&#xa;, SUB_AREA_DO_CONHECIMENTO_1&#xd;&#xa;, GRANDE_AREA_DO_CONHECIMENTO_2&#xd;&#xa;, AREA_DO_CONHECIMENTO_2&#xd;&#xa;, SUB_AREA_DO_CONHECIMENTO_2&#xd;&#xa;, GRANDE_AREA_DO_CONHECIMENTO_3&#xd;&#xa;, AREA_DO_CONHECIMENTO_3&#xd;&#xa;, SUB_AREA_DO_CONHECIMENTO_3&#xd;&#xa;, ESPECIALIDADE_DO_CONHECIMENTO_1&#xd;&#xa;, ESPECIALIDADE_DO_CONHECIMENTO_2&#xd;&#xa;, ESPECIALIDADE_DO_CONHECIMENTO_3&#xd;&#xa;, idArea&#xd;&#xa;FROM ds_areas&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

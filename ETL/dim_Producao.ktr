@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>dim_artigos</name>
+    <name>dim_Producao</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -100,17 +101,16 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>ds_artigos</from><to>String operations</to><enabled>Y</enabled> </hop>
-  <hop> <from>String operations</from><to>If field value is null</to><enabled>Y</enabled> </hop>
-  <hop> <from>If field value is null</from><to>AREA CONHECIMENTO 1</to><enabled>Y</enabled> </hop>
-  <hop> <from>AREA CONHECIMENTO 1</from><to>AREA CONHECIMENTO 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>AREA CONHECIMENTO 2</from><to>AREA CONHECIMENTO 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>AREA CONHECIMENTO 3</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>dim_artigos</to><enabled>Y</enabled> </hop>
+  <hop> <from>ds_producao</from><to>String operations</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>dim_producao</to><enabled>Y</enabled> </hop>
+  <hop> <from>String operations</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>If field value is null</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>AREA CONHECIMENTO 1</name>
-    <type>DBLookup</type>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -119,153 +119,20 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>conexao</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>dim_areas</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>Y</eat_row_on_failure>
-      <key>
-        <name>GRANDE-AREA-1</name>
-        <field>GRANDE-AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>AREA-1</name>
-        <field>AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>SUB-AREA-1</name>
-        <field>SUB-AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>pkarea</name>
-        <rename>pkarea1</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
+<send_true_to>Unique rows &#x28;HashSet&#x29;</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>TITULO_PRODUCAO</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>N&#xc3;O INFORMADO</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>335</xloc>
-      <yloc>168</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>AREA CONHECIMENTO 2</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexao</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>dim_areas</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>Y</eat_row_on_failure>
-      <key>
-        <name>GRANDE-AREA-2</name>
-        <field>GRANDE-AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>AREA-2</name>
-        <field>AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>SUB-AREA-2</name>
-        <field>SUB-AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>pkarea</name>
-        <rename>pkarea2</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>335</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>AREA CONHECIMENTO 3</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexao</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>dim_areas</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>Y</eat_row_on_failure>
-      <key>
-        <name>GRANDE-AREA-3</name>
-        <field>GRANDE-AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>AREA-3</name>
-        <field>AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>SUB-AREA-3</name>
-        <field>SUB-AREA</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>pkarea</name>
-        <rename>pkarea3</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>334</xloc>
-      <yloc>388</yloc>
+      <xloc>614</xloc>
+      <yloc>163</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -290,55 +157,7 @@
       </valuetypes>
     <fields>
       <field>
-        <name>GRANDE-AREA-1</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>AREA-1</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>SUB-AREA-1</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>GRANDE-AREA-2</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>AREA-2</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>SUB-AREA-2</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>GRANDE-AREA-3</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>AREA-3</name>
-        <value>N&#xc3;O INFORMADO</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>SUB-AREA-3</name>
+        <name>TITULO_PRODUCAO</name>
         <value>N&#xc3;O INFORMADO</value>
         <mask/>
         <set_empty_string>N</set_empty_string>
@@ -346,8 +165,40 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>338</xloc>
-      <yloc>63</yloc>
+      <xloc>468</xloc>
+      <yloc>163</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>TITULO_PRODUCAO</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>,</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>328</xloc>
+      <yloc>163</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -365,7 +216,7 @@
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>TITULO-ARTIGO</in_stream_name>
+        <in_stream_name>TITULO_PRODUCAO</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -378,124 +229,7 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>ANO-ARTIGO</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>GRANDE-AREA-1</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>AREA-1</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>SUB-AREA-1</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>GRANDE-AREA-2</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>AREA-2</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>SUB-AREA-2</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>GRANDE-AREA-3</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>AREA-3</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>upper</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>crlf</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>SUB-AREA-3</in_stream_name>
+        <in_stream_name>TIPO_PRODUCAO</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -530,21 +264,18 @@
       <store_values>N</store_values>
       <reject_duplicate_row>N</reject_duplicate_row>
       <error_description/>
-    <fields>      <field>        <name>TITULO-ARTIGO</name>
-        </field>      <field>        <name>ANO-ARTIGO</name>
-        </field>      <field>        <name>pkarea1</name>
-        </field>      <field>        <name>pkarea2</name>
-        </field>      <field>        <name>pkarea3</name>
+    <fields>      <field>        <name>TITULO_PRODUCAO</name>
+        </field>      <field>        <name>TIPO_PRODUCAO</name>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>542</xloc>
-      <yloc>388</yloc>
+      <xloc>596</xloc>
+      <yloc>312</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dim_artigos</name>
+    <name>dim_producao</name>
     <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -555,13 +286,13 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>dim_artigos</table>
+      <table>dim_producao</table>
       <connection>conexao</connection>
       <commit>100</commit>
       <update>Y</update>
       <fields>
         <key>
-          <name>artigoid</name>
+          <name>idProducao</name>
           <lookup>chave_dominio</lookup>
         </key>
         <date>
@@ -570,35 +301,20 @@
           <to>date_to</to>
         </date>
         <field>
-          <name>TITULO-ARTIGO</name>
-          <lookup>TITULO-ARTIGO</lookup>
+          <name>TITULO_PRODUCAO</name>
+          <lookup>TITULO_PRODUCAO</lookup>
           <update>Insert</update>
         </field>
         <field>
-          <name>pkarea1</name>
-          <lookup>pkarea1</lookup>
-          <update>Insert</update>
-        </field>
-        <field>
-          <name>pkarea2</name>
-          <lookup>pkarea2</lookup>
-          <update>Insert</update>
-        </field>
-        <field>
-          <name>pkarea3</name>
-          <lookup>pkarea3</lookup>
-          <update>Insert</update>
-        </field>
-        <field>
-          <name>ANO-ARTIGO</name>
-          <lookup>ANO-ARTIGO</lookup>
+          <name>TIPO_PRODUCAO</name>
+          <lookup>TIPO_PRODUCAO</lookup>
           <update>Insert</update>
         </field>
         <return>
-          <name>pkartigo</name>
+          <name>pkProducao</name>
           <rename/>
-          <creation_method>tablemax</creation_method>
-          <use_autoinc>N</use_autoinc>
+          <creation_method>autoinc</creation_method>
+          <use_autoinc>Y</use_autoinc>
           <version>version</version>
         </return>
       </fields>
@@ -612,14 +328,14 @@
       <start_date_field_name/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>737</xloc>
-      <yloc>388</yloc>
+      <xloc>787</xloc>
+      <yloc>312</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>ds_artigos</name>
+    <name>ds_producao</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -630,7 +346,7 @@
            <schema_name/>
            </partitioning>
     <connection>conexao</connection>
-    <sql>SELECT&#xd;&#xa;  artigoid&#xd;&#xa;, &#x60;TITULO-ARTIGO&#x60;&#xd;&#xa;, &#x60;ANO-ARTIGO&#x60;&#xd;&#xa;, &#x60;GRANDE-AREA-1&#x60;&#xd;&#xa;, &#x60;AREA-1&#x60;&#xd;&#xa;, &#x60;SUB-AREA-1&#x60;&#xd;&#xa;, &#x60;GRANDE-AREA-2&#x60;&#xd;&#xa;, &#x60;AREA-2&#x60;&#xd;&#xa;, &#x60;SUB-AREA-2&#x60;&#xd;&#xa;, &#x60;GRANDE-AREA-3&#x60;&#xd;&#xa;, &#x60;AREA-3&#x60;&#xd;&#xa;, &#x60;SUB-AREA-3&#x60;&#xd;&#xa;FROM ds_artigos&#xd;&#xa;</sql>
+    <sql>SELECT&#xd;&#xa;  idProducao&#xd;&#xa;, TITULO_PRODUCAO&#xd;&#xa;, TIPO_PRODUCAO&#xd;&#xa;FROM ds_producao&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

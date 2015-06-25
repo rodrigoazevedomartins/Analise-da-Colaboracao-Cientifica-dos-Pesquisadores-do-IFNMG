@@ -177,7 +177,7 @@
   <hop> <from>Select values 2</from><to>Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Calc Date</from><to>DayOfWeekDesc</to><enabled>Y</enabled> </hop>
   <hop> <from>DayOfWeekDesc</from><to>MonthDesc</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Dimension lookup&#x2f;update</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>dim_Tempo</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>40000 days&#x3a; 100&#x2b; years</name>
@@ -1144,7 +1144,7 @@
     </step>
 
   <step>
-    <name>Dimension lookup&#x2f;update</name>
+    <name>dim_Tempo</name>
     <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1162,7 +1162,7 @@
       <fields>
         <key>
           <name>YEAR_SK</name>
-          <lookup>chavedominio</lookup>
+          <lookup>chave_dominio</lookup>
         </key>
         <date>
           <name/>
@@ -1171,14 +1171,14 @@
         </date>
         <field>
           <name>year_number</name>
-          <lookup>year_number</lookup>
+          <lookup>YEAR_NUMBER</lookup>
           <update>Insert</update>
         </field>
         <return>
-          <name>pktempo</name>
+          <name>pkTempo</name>
           <rename/>
-          <creation_method>tablemax</creation_method>
-          <use_autoinc>N</use_autoinc>
+          <creation_method>autoinc</creation_method>
+          <use_autoinc>Y</use_autoinc>
           <version>version</version>
         </return>
       </fields>

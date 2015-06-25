@@ -102,12 +102,46 @@
   </connection>
   <order>
   <hop> <from>ds_publicacao</from><to>String operations</to><enabled>Y</enabled> </hop>
-  <hop> <from>String operations</from><to>dim_pesquisador</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_pesquisador</from><to>dim_artigos</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_artigos</from><to>dim_tempo</to><enabled>Y</enabled> </hop>
-  <hop> <from>dim_tempo</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>dim_pesquisador</from><to>dim_producao</to><enabled>Y</enabled> </hop>
+  <hop> <from>dim_producao</from><to>dim_tempo</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>fato_publicacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>dim_tempo</from><to>dim_campus</to><enabled>Y</enabled> </hop>
+  <hop> <from>dim_campus</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>String operations</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>dim_pesquisador</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>TITULO_PRODUCAO</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>,</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>511</xloc>
+      <yloc>89</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>String operations</name>
     <type>StringOperations</type>
@@ -121,7 +155,7 @@
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>TITULO-ARTIGO</in_stream_name>
+        <in_stream_name>TITULO_PRODUCAO</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -134,7 +168,7 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>ANO-ARTIGO</in_stream_name>
+        <in_stream_name>ANO_PRODUCAO</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -147,7 +181,20 @@
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>NOME-PESQUISADOR</in_stream_name>
+        <in_stream_name>NOME_PESQUISADOR</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>NOME_CAMPUS</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -162,14 +209,40 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>333</xloc>
+      <xloc>367</xloc>
       <yloc>89</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dim_artigos</name>
+    <name>Unique rows &#x28;HashSet&#x29;</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>Y</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>fkPesquisador</name>
+        </field>      <field>        <name>fkProducao</name>
+        </field>      <field>        <name>fkCampus</name>
+        </field>      <field>        <name>fkTempo</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>476</xloc>
+      <yloc>309</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dim_producao</name>
     <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -185,33 +258,69 @@
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
-      <table>dim_artigos</table>
+      <table>dim_producao</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
-        <name>TITULO-ARTIGO</name>
-        <field>TITULO-ARTIGO</field>
-        <condition>LIKE</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>ANO-ARTIGO</name>
-        <field>ANO-ARTIGO</field>
+        <name>TITULO_PRODUCAO</name>
+        <field>TITULO_PRODUCAO</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
       <value>
-        <name>pkartigo</name>
-        <rename>fkartigo</rename>
+        <name>pkProducao</name>
+        <rename>fkProducao</rename>
         <default/>
         <type>Integer</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>324</yloc>
+      <xloc>433</xloc>
+      <yloc>182</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dim_campus</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>conexao</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>dim_campus</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>NOME_CAMPUS</name>
+        <field>NOME_CAMPUS</field>
+        <condition>LIKE</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>pkCampus</name>
+        <rename>fkCampus</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>265</xloc>
+      <yloc>309</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -236,10 +345,10 @@
       <table>dim_pesquisador</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
-        <name>NOME-PESQUISADOR</name>
-        <field>NOME</field>
+        <name>NOME_PESQUISADOR</name>
+        <field>NOME_PESQUISADOR</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
@@ -252,8 +361,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>333</xloc>
-      <yloc>208</yloc>
+      <xloc>615</xloc>
+      <yloc>182</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -278,24 +387,24 @@
       <table>dim_tempo</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
-        <name>ANO-ARTIGO</name>
+        <name>ANO_PRODUCAO</name>
         <field>year_number</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <value>
-        <name>pktempo</name>
-        <rename>fktempo</rename>
+        <name>pkTempo</name>
+        <rename>fkTempo</rename>
         <default/>
         <type>Integer</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>438</yloc>
+      <xloc>266</xloc>
+      <yloc>182</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -312,8 +421,8 @@
            <schema_name/>
            </partitioning>
     <connection>conexao</connection>
-    <sql>SELECT&#xd;&#xa;  publicacaoid&#xd;&#xa;, &#x60;TITULO-ARTIGO&#x60;&#xd;&#xa;, &#x60;ANO-ARTIGO&#x60;&#xd;&#xa;, &#x60;NOME-PESQUISADOR&#x60;&#xd;&#xa;FROM ds_publicacao&#xd;&#xa;</sql>
-    <limit>0</limit>
+    <sql>SELECT&#xd;&#xa;  idPublicacao&#xd;&#xa;, TITULO_PRODUCAO&#xd;&#xa;, ANO_PRODUCAO&#xd;&#xa;, NOME_PESQUISADOR&#xd;&#xa;, NOME_CAMPUS&#xd;&#xa;FROM ds_publicacao&#xd;&#xa;</sql>
+    <limit/>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -341,7 +450,7 @@
     <schema/>
     <table>fato_publicacao</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
@@ -353,50 +462,29 @@
     <tablename_field/>
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>Y</return_keys>
-    <return_field>pkpublicacao</return_field>
+    <return_field>pkPublicacao</return_field>
     <fields>
         <field>
           <column_name>fkPesquisador</column_name>
           <stream_name>fkPesquisador</stream_name>
         </field>
         <field>
-          <column_name>fkartigo</column_name>
-          <stream_name>fkartigo</stream_name>
+          <column_name>fkProducao</column_name>
+          <stream_name>fkProducao</stream_name>
         </field>
         <field>
-          <column_name>fktempo</column_name>
-          <stream_name>fktempo</stream_name>
+          <column_name>fkTempo</column_name>
+          <stream_name>fkTempo</stream_name>
+        </field>
+        <field>
+          <column_name>fkCampus</column_name>
+          <stream_name>fkCampus</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>670</xloc>
-      <yloc>438</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Unique rows &#x28;HashSet&#x29;</name>
-    <type>UniqueRowsByHashSet</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <store_values>N</store_values>
-      <reject_duplicate_row>N</reject_duplicate_row>
-      <error_description/>
-    <fields>      <field>        <name>fkPesquisador</name>
-        </field>      <field>        <name>fkartigo</name>
-        </field>      <field>        <name>fktempo</name>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>485</xloc>
-      <yloc>438</yloc>
+      <yloc>309</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

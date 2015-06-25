@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ds_Publicacao</name>
+    <name>ds_producao</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,9 +67,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;03&#x2f;18 09&#x3a;46&#x3a;31.686</created_date>
+  <created_date>2015&#x2f;03&#x2f;18 09&#x3a;17&#x3a;40.030</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;03&#x2f;18 09&#x3a;46&#x3a;31.686</modified_date>
+  <modified_date>2015&#x2f;03&#x2f;18 09&#x3a;17&#x3a;40.030</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -101,43 +101,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Publicacao</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>ds_pesquisador</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>ds_publicacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>Producao</from><to>ds_producao</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Join Rows &#x28;cartesian product&#x29;</name>
-    <type>JoinRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main>Publicacao</main>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>NOME_PESQUISADOR_PRODUCAO</leftvalue>
- <function>LIKE</function>
- <rightvalue>NOME_PESQUISADOR</rightvalue>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>340</xloc>
-      <yloc>116</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Publicacao</name>
+    <name>Producao</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -170,11 +137,11 @@
     <rownum>N</rownum>
     <rownumByFile>N</rownumByFile>
     <rownum_field/>
-    <format>Unix</format>
-    <encoding/>
+    <format>mixed</format>
+    <encoding>windows-1252</encoding>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Rodrigo&#x5c;Documents&#x5c;GitHub&#x5c;Analise-da-Colaboracao-Cientifica-dos-Pesquisadores-do-IFNMG&#x5c;Dados&#x5c;publicacao.txt</name>
+      <name>C&#x3a;&#x5c;Users&#x5c;Rodrigo&#x5c;Documents&#x5c;GitHub&#x5c;Analise-da-Colaboracao-Cientifica-dos-Pesquisadores-do-IFNMG&#x5c;Dados&#x5c;producao.txt</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -201,7 +168,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>ANO_PRODUCAO</name>
+        <name>TIPO_PRODUCAO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -216,7 +183,172 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>NOME_PESQUISADOR_PRODUCAO</name>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>GRANDE_AREA_DO_CONHECIMENTO_3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>AREA_DO_CONHECIMENTO_3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SUB_AREA_DO_CONHECIMENTO_3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ESPECIALIDADE_DO_CONHECIMENTO_3</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -258,40 +390,14 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>186</xloc>
-      <yloc>116</yloc>
+      <xloc>231</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>ds_pesquisador</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexao</connection>
-    <sql>SELECT&#xd;&#xa;  idPesquisador&#xd;&#xa;, NOME_PESQUISADOR&#xd;&#xa;, NOME_CAMPUS&#xd;&#xa;FROM ds_pesquisador&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>340</xloc>
-      <yloc>23</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>ds_publicacao</name>
+    <name>ds_producao</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -303,9 +409,9 @@
            </partitioning>
     <connection>conexao</connection>
     <schema/>
-    <table>ds_publicacao</table>
+    <table>ds_producao</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
@@ -317,29 +423,69 @@
     <tablename_field/>
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>Y</return_keys>
-    <return_field>idPublicacao</return_field>
+    <return_field>idProducao</return_field>
     <fields>
         <field>
           <column_name>TITULO_PRODUCAO</column_name>
           <stream_name>TITULO_PRODUCAO</stream_name>
         </field>
         <field>
-          <column_name>ANO_PRODUCAO</column_name>
-          <stream_name>ANO_PRODUCAO</stream_name>
+          <column_name>TIPO_PRODUCAO</column_name>
+          <stream_name>TIPO_PRODUCAO</stream_name>
         </field>
         <field>
-          <column_name>NOME_PESQUISADOR</column_name>
-          <stream_name>NOME_PESQUISADOR</stream_name>
+          <column_name>GRANDE_AREA_DO_CONHECIMENTO_1</column_name>
+          <stream_name>GRANDE_AREA_DO_CONHECIMENTO_1</stream_name>
         </field>
         <field>
-          <column_name>NOME_CAMPUS</column_name>
-          <stream_name>NOME_CAMPUS</stream_name>
+          <column_name>AREA_DO_CONHECIMENTO_1</column_name>
+          <stream_name>AREA_DO_CONHECIMENTO_1</stream_name>
+        </field>
+        <field>
+          <column_name>SUB_AREA_DO_CONHECIMENTO_1</column_name>
+          <stream_name>SUB_AREA_DO_CONHECIMENTO_1</stream_name>
+        </field>
+        <field>
+          <column_name>ESPECIALIDADE_DO_CONHECIMENTO_1</column_name>
+          <stream_name>ESPECIALIDADE_DO_CONHECIMENTO_1</stream_name>
+        </field>
+        <field>
+          <column_name>GRANDE_AREA_DO_CONHECIMENTO_2</column_name>
+          <stream_name>GRANDE_AREA_DO_CONHECIMENTO_2</stream_name>
+        </field>
+        <field>
+          <column_name>AREA_DO_CONHECIMENTO_2</column_name>
+          <stream_name>AREA_DO_CONHECIMENTO_2</stream_name>
+        </field>
+        <field>
+          <column_name>SUB_AREA_DO_CONHECIMENTO_2</column_name>
+          <stream_name>SUB_AREA_DO_CONHECIMENTO_2</stream_name>
+        </field>
+        <field>
+          <column_name>ESPECIALIDADE_DO_CONHECIMENTO_2</column_name>
+          <stream_name>ESPECIALIDADE_DO_CONHECIMENTO_2</stream_name>
+        </field>
+        <field>
+          <column_name>GRANDE_AREA_DO_CONHECIMENTO_3</column_name>
+          <stream_name>GRANDE_AREA_DO_CONHECIMENTO_3</stream_name>
+        </field>
+        <field>
+          <column_name>AREA_DO_CONHECIMENTO_3</column_name>
+          <stream_name>AREA_DO_CONHECIMENTO_3</stream_name>
+        </field>
+        <field>
+          <column_name>SUB_AREA_DO_CONHECIMENTO_3</column_name>
+          <stream_name>SUB_AREA_DO_CONHECIMENTO_3</stream_name>
+        </field>
+        <field>
+          <column_name>ESPECIALIDADE_DO_CONHECIMENTO_3</column_name>
+          <stream_name>ESPECIALIDADE_DO_CONHECIMENTO_3</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>529</xloc>
-      <yloc>117</yloc>
+      <xloc>450</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
